@@ -85,9 +85,21 @@ export default function Contact() {
                 <h3 className="text-3xl font-serif font-bold text-mtc-charcoal mb-8">Send an Inquiry</h3>
                 
                 {isSuccess && (
-                  <div className="mb-8 p-4 bg-green-50 text-green-800 border border-green-200 font-medium">
-                    Thank you! Your inquiry has been submitted successfully.
-                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mb-8 p-5 bg-green-50 text-green-800 border-l-4 border-green-500 rounded flex items-start gap-3"
+                    role="alert"
+                    aria-live="polite"
+                  >
+                    <svg className="w-6 h-6 text-green-600 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <div>
+                      <p className="font-bold text-green-800 mb-1">Inquiry Submitted Successfully!</p>
+                      <p className="text-green-700 text-sm">Thank you for reaching out. Our team will contact you shortly at your provided email address.</p>
+                    </div>
+                  </motion.div>
                 )}
 
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">

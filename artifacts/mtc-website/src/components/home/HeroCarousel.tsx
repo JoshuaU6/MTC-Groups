@@ -74,6 +74,12 @@ export function HeroCarousel() {
 
   return (
     <div className="relative w-full h-screen min-h-[600px] overflow-hidden bg-mtc-navy group">
+      {/* Animated diagonal red accent lines — CSS only */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-10" aria-hidden="true">
+        <div className="hero-diagonal-line" />
+        <div className="hero-diagonal-line hero-diagonal-line-2" />
+      </div>
+
       <div className="embla w-full h-full" ref={emblaRef}>
         <div className="embla__container h-full">
           {slides.map((slide, index) => (

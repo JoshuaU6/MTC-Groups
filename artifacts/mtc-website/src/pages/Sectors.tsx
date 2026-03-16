@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
 import { Flame, Warehouse, Building2, HeartPulse, GraduationCap, Cpu } from "lucide-react";
 
@@ -59,23 +60,27 @@ export default function Sectors() {
             {SECTORS.map((sector, index) => {
               const Icon = sector.icon;
               return (
-                <motion.div 
-                  key={sector.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white p-10 shadow-sm hover:shadow-xl transition-all duration-300 border-l-4 border-transparent hover:border-mtc-red group"
-                >
-                  <div className="w-16 h-16 bg-mtc-red rounded-full flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-transform">
-                    <Icon className="w-8 h-8" />
+                <ScrollReveal key={sector.title} delay={index * 80}>
+                  <div className="relative h-[300px] bg-white shadow-sm hover:shadow-xl transition-all duration-300 border-l-4 border-transparent hover:border-mtc-red group overflow-hidden p-10">
+                    <div className="w-16 h-16 bg-mtc-red rounded-full flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-8 h-8" aria-hidden="true" />
+                    </div>
+                    <h2 className="text-2xl font-serif text-mtc-charcoal font-bold mb-3">{sector.title}</h2>
+                    <div className="w-12 h-1 bg-gray-200 mb-4 group-hover:bg-mtc-red transition-colors duration-300" />
+                    <p className="text-gray-600 font-light leading-relaxed text-sm">
+                      {sector.desc}
+                    </p>
+
+                    {/* Hover overlay */}
+                    <div
+                      className="absolute inset-0 bg-mtc-red flex flex-col items-center justify-center opacity-0 group-hover:opacity-95 transition-opacity duration-300 pointer-events-none"
+                      aria-hidden="true"
+                    >
+                      <Icon className="w-12 h-12 text-white mb-4 opacity-80" />
+                      <span className="text-white text-xl font-bold tracking-wide">Learn More →</span>
+                    </div>
                   </div>
-                  <h2 className="text-2xl font-serif text-mtc-charcoal font-bold mb-4">{sector.title}</h2>
-                  <div className="w-12 h-1 bg-gray-200 mb-6 group-hover:bg-mtc-red transition-colors" />
-                  <p className="text-gray-600 font-light leading-relaxed">
-                    {sector.desc}
-                  </p>
-                </motion.div>
+                </ScrollReveal>
               );
             })}
           </div>
