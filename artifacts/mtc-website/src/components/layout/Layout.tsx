@@ -1,7 +1,7 @@
 import { ReactNode, useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronRight, MapPin, Mail, Phone } from "lucide-react";
+import { Menu, X, MapPin, Mail, Phone, Linkedin, Twitter, Facebook, ChevronRight } from "lucide-react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -22,7 +22,6 @@ export function Layout({ children }: LayoutProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Determine if we're on a page with a full-screen hero (like home)
   const isHomePage = location === "/";
 
   useEffect(() => {
@@ -33,28 +32,31 @@ export function Layout({ children }: LayoutProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
     window.scrollTo(0, 0);
   }, [location]);
 
-  const navClass = isHomePage
-    ? isScrolled
-      ? "bg-mtc-navy/95 backdrop-blur-md shadow-lg py-4"
-      : "bg-transparent py-6"
-    : "bg-mtc-navy shadow-lg py-4";
+  // Navbar styling logic
+  const isDarkNav = isHomePage && !isScrolled;
+  const navClass = isDarkNav
+    ? "bg-transparent py-6"
+    : "bg-white shadow-md py-4";
+
+  const logoColor = "text-mtc-red";
+  const logoSubColor = isDarkNav ? "text-white/90" : "text-mtc-charcoal";
+  const linkColor = isDarkNav ? "text-white hover:text-white" : "text-mtc-charcoal hover:text-mtc-red";
 
   return (
-    <div className="flex flex-col min-h-screen bg-background text-foreground selection:bg-mtc-gold selection:text-mtc-navy">
-      {/* Top Bar (Contact Info) - Hidden on Mobile */}
-      <div className="hidden lg:flex justify-between items-center px-8 py-2 bg-mtc-navy border-b border-white/10 text-white/80 text-xs">
+    <div className="flex flex-col min-h-screen bg-white text-mtc-charcoal">
+      {/* Top Bar */}
+      <div className="hidden lg:flex justify-between items-center px-8 py-2 bg-mtc-charcoal text-white/70 text-xs">
         <div className="flex space-x-6">
-          <span className="flex items-center"><MapPin className="w-3 h-3 mr-2 text-mtc-gold" /> Headquarters: Washington DC, USA</span>
-          <span className="flex items-center"><Phone className="w-3 h-3 mr-2 text-mtc-gold" /> Global: +1 771 240 1273</span>
+          <span className="flex items-center"><MapPin className="w-3 h-3 mr-2 text-mtc-red" /> Headquarters: Washington DC, USA</span>
+          <span className="flex items-center"><Phone className="w-3 h-3 mr-2 text-mtc-red" /> Global: +1 771 240 1273</span>
         </div>
         <div>
-          <span className="flex items-center"><Mail className="w-3 h-3 mr-2 text-mtc-gold" /> info@mtcgroup.com</span>
+          <span className="flex items-center"><Mail className="w-3 h-3 mr-2 text-mtc-red" /> info@mtcgroup.com</span>
         </div>
       </div>
 
@@ -64,43 +66,41 @@ export function Layout({ children }: LayoutProps) {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center group">
-              <img 
-                src={`${import.meta.env.BASE_URL}images/logo.png`} 
-                alt="MTC Group Logo" 
-                className="w-10 h-10 md:w-12 md:h-12 mr-3"
-              />
               <div className="flex flex-col">
-                <span className="font-serif text-2xl font-bold tracking-wider text-white">MTC</span>
-                <span className="text-[0.6rem] tracking-[0.25em] text-mtc-gold uppercase">Group of Companies</span>
+                <span className={`font-serif text-3xl font-bold tracking-wider ${logoColor}`}>MTC</span>
+                <span className={`text-[0.65rem] tracking-[0.1em] font-sans font-medium uppercase ${logoSubColor}`}>Group of Companies</span>
               </div>
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden xl:flex items-center space-x-2">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`px-4 py-2 text-sm font-medium transition-colors relative ${
-                    location === link.href ? "text-mtc-gold" : "text-white/80 hover:text-white"
-                  }`}
+                  className={`px-4 py-2 text-sm font-medium transition-colors relative ${linkColor}`}
                 >
                   {link.name}
                   {location === link.href && (
                     <motion.div
                       layoutId="nav-indicator"
-                      className="absolute bottom-0 left-0 w-full h-0.5 bg-mtc-gold"
+                      className="absolute bottom-0 left-0 w-full h-[2px] bg-mtc-red"
                       initial={false}
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
                 </Link>
               ))}
+              <Link href="/contact" className="ml-4">
+                <button className="bg-mtc-red text-white hover:bg-red-800 transition-colors rounded px-5 py-2 text-sm font-medium">
+                  Partner With Us
+                </button>
+              </Link>
             </nav>
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden text-white p-2 focus:outline-none"
+              className={`xl:hidden p-2 focus:outline-none ${isDarkNav ? 'text-white' : 'text-mtc-charcoal'}`}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -117,21 +117,26 @@ export function Layout({ children }: LayoutProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="fixed inset-x-0 top-[72px] bg-mtc-navy border-t border-white/10 z-40 lg:hidden overflow-hidden"
+            className="fixed inset-x-0 top-[72px] bg-white border-t border-gray-200 z-40 xl:hidden overflow-hidden shadow-xl"
           >
-            <div className="flex flex-col py-4 px-6 space-y-4">
+            <div className="flex flex-col py-4 px-6 space-y-2">
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`text-lg py-2 border-b border-white/5 flex justify-between items-center ${
-                    location === link.href ? "text-mtc-gold font-semibold" : "text-white/80"
+                  className={`text-lg py-3 border-b border-gray-100 flex justify-between items-center ${
+                    location === link.href ? "text-mtc-red font-semibold" : "text-mtc-charcoal"
                   }`}
                 >
                   {link.name}
                   <ChevronRight className="w-4 h-4 opacity-50" />
                 </Link>
               ))}
+              <Link href="/contact" className="pt-4">
+                <button className="w-full bg-mtc-red text-white rounded px-5 py-3 text-lg font-medium text-center">
+                  Partner With Us
+                </button>
+              </Link>
             </div>
           </motion.div>
         )}
@@ -143,34 +148,40 @@ export function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-mtc-navy pt-20 pb-10 border-t border-white/10">
+      <footer className="bg-mtc-charcoal pt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             
-            {/* Brand Col */}
+            {/* Col 1 */}
             <div className="space-y-6">
-              <Link href="/" className="flex items-center inline-block">
-                <div className="flex flex-col">
-                  <span className="font-serif text-3xl font-bold tracking-wider text-white">MTC</span>
-                  <span className="text-[0.6rem] tracking-[0.25em] text-mtc-gold uppercase">Group of Companies</span>
-                </div>
+              <Link href="/" className="flex flex-col inline-block">
+                <span className="font-serif text-3xl font-bold tracking-wider text-mtc-red">MTC</span>
+                <span className="text-[0.65rem] tracking-[0.1em] font-sans font-medium uppercase text-white/90">Group of Companies</span>
               </Link>
               <p className="text-white/70 text-sm leading-relaxed pr-4">
-                Powering Global Trade. Building Sustainable Industries through strategic investment and operational excellence.
+                Powering Global Trade. Building Sustainable Industries.
               </p>
+              <div className="flex space-x-4">
+                <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-mtc-red transition-colors">
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-mtc-red transition-colors">
+                  <Twitter className="w-4 h-4" />
+                </a>
+                <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-mtc-red transition-colors">
+                  <Facebook className="w-4 h-4" />
+                </a>
+              </div>
             </div>
 
-            {/* Quick Links */}
+            {/* Col 2 */}
             <div>
-              <h4 className="text-white font-serif text-lg mb-6 flex items-center">
-                <span className="w-6 h-px bg-mtc-gold mr-3"></span>
-                Quick Links
-              </h4>
+              <h4 className="text-mtc-gold font-serif text-lg mb-6">Quick Links</h4>
               <ul className="space-y-3">
-                {NAV_LINKS.slice(0, 4).map((link) => (
+                {NAV_LINKS.map((link) => (
                   <li key={link.name}>
-                    <Link href={link.href} className="text-white/70 hover:text-mtc-gold text-sm transition-colors flex items-center">
-                      <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-50" />
+                    <Link href={link.href} className="text-white/70 hover:text-white text-sm transition-colors flex items-center group">
+                      <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-0 group-hover:opacity-100 transition-opacity" />
                       {link.name}
                     </Link>
                   </li>
@@ -178,56 +189,53 @@ export function Layout({ children }: LayoutProps) {
               </ul>
             </div>
 
-            {/* Subsidiaries */}
+            {/* Col 3 */}
             <div>
-              <h4 className="text-white font-serif text-lg mb-6 flex items-center">
-                <span className="w-6 h-px bg-mtc-gold mr-3"></span>
-                Our Companies
-              </h4>
+              <h4 className="text-mtc-gold font-serif text-lg mb-6">Our Companies</h4>
               <ul className="space-y-3">
                 <li>
-                  <Link href="/subsidiaries" className="text-white/70 hover:text-mtc-gold text-sm transition-colors flex items-center">
-                    <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-50" />
+                  <Link href="/subsidiaries" className="text-white/70 hover:text-white text-sm transition-colors flex items-center group">
+                    <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-0 group-hover:opacity-100 transition-opacity" />
                     MainKey Limited
                   </Link>
                 </li>
                 <li>
-                  <Link href="/subsidiaries" className="text-white/70 hover:text-mtc-gold text-sm transition-colors flex items-center">
-                    <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-50" />
+                  <Link href="/subsidiaries" className="text-white/70 hover:text-white text-sm transition-colors flex items-center group">
+                    <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-0 group-hover:opacity-100 transition-opacity" />
                     Safwad Limited
                   </Link>
                 </li>
               </ul>
             </div>
 
-            {/* Contact */}
+            {/* Col 4 */}
             <div>
-              <h4 className="text-white font-serif text-lg mb-6 flex items-center">
-                <span className="w-6 h-px bg-mtc-gold mr-3"></span>
-                Contact Us
-              </h4>
+              <h4 className="text-mtc-gold font-serif text-lg mb-6">Contact</h4>
               <ul className="space-y-4">
-                <li className="flex items-start text-sm text-white/70">
-                  <MapPin className="w-5 h-5 mr-3 text-mtc-gold shrink-0 mt-0.5" />
-                  <span>Washington Business District, DC 20001, USA</span>
-                </li>
                 <li className="flex items-center text-sm text-white/70">
-                  <Phone className="w-5 h-5 mr-3 text-mtc-gold shrink-0" />
-                  <span>+1 771 240 1273</span>
-                </li>
-                <li className="flex items-center text-sm text-white/70">
-                  <Mail className="w-5 h-5 mr-3 text-mtc-gold shrink-0" />
+                  <Mail className="w-4 h-4 mr-3 text-mtc-red shrink-0" />
                   <span>info@mtcgroup.com</span>
+                </li>
+                <li className="flex items-center text-sm text-white/70">
+                  <span className="w-4 h-4 mr-3 flex items-center justify-center text-mtc-red font-bold">🌐</span>
+                  <span>www.mtcgroup.com</span>
+                </li>
+                <li className="flex items-center text-sm text-white/70">
+                  <Phone className="w-4 h-4 mr-3 text-mtc-red shrink-0" />
+                  <span>+1 771 240 1273</span>
                 </li>
               </ul>
             </div>
           </div>
+        </div>
 
-          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-white/50">
-            <p>© {new Date().getFullYear()} MTC Group of Companies. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="border-t border-mtc-red">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center text-xs text-white/50">
+            <p>© 2025 MTC Group of Companies. All Rights Reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="hover:text-mtc-gold transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-mtc-gold transition-colors">Terms of Use</a>
+              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
             </div>
           </div>
         </div>

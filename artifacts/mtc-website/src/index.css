@@ -5,31 +5,29 @@
   --font-sans: 'DM Sans', sans-serif;
   --font-serif: 'Playfair Display', serif;
 
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
+  --color-mtc-red: #C0001A;
+  --color-mtc-charcoal: #1A1A1A;
+  --color-mtc-charcoal-light: #2A2A2A;
+  --color-mtc-gold: #B8962E;
+  --color-mtc-grey: #F5F5F5;
 
-  --color-mtc-navy: hsl(212 55% 12%);
-  --color-mtc-navy-light: hsl(212 40% 18%);
-  --color-mtc-gold: hsl(43 74% 49%);
-  --color-mtc-gold-light: hsl(43 85% 65%);
-  --color-mtc-gold-dark: hsl(43 85% 35%);
+  --color-background: #FFFFFF;
+  --color-foreground: #1A1A1A;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1A1A1A;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #1A1A1A;
+  --color-primary: #C0001A;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #F5F5F5;
+  --color-secondary-foreground: #1A1A1A;
+  --color-muted: #F5F5F5;
+  --color-muted-foreground: #666666;
+  --color-accent: #C0001A;
+  --color-accent-foreground: #FFFFFF;
+  --color-border: #E5E5E5;
+  --color-input: #E5E5E5;
+  --color-ring: #C0001A;
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -37,67 +35,7 @@
 }
 
 :root {
-  /* Default to Light Mode with Luxury Corporate feel */
-  --background: 0 0% 100%;
-  --foreground: 212 55% 12%; /* mtc-navy */
-  
-  --card: 0 0% 100%;
-  --card-foreground: 212 55% 12%;
-  
-  --popover: 0 0% 100%;
-  --popover-foreground: 212 55% 12%;
-  
-  --primary: 43 74% 49%; /* mtc-gold */
-  --primary-foreground: 212 55% 12%; /* mtc-navy */
-  
-  --secondary: 212 55% 12%; /* mtc-navy */
-  --secondary-foreground: 0 0% 100%;
-  
-  --muted: 210 40% 96%;
-  --muted-foreground: 215 16% 47%;
-  
-  --accent: 43 74% 49%;
-  --accent-foreground: 212 55% 12%;
-  
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 43 74% 49%;
-  
   --radius: 0.25rem;
-}
-
-.dark {
-  /* Dark mode - deeper navy base */
-  --background: 212 55% 8%; 
-  --foreground: 0 0% 98%;
-  
-  --card: 212 40% 12%;
-  --card-foreground: 0 0% 98%;
-  
-  --popover: 212 55% 10%;
-  --popover-foreground: 0 0% 98%;
-  
-  --primary: 43 74% 49%;
-  --primary-foreground: 212 55% 12%;
-  
-  --secondary: 212 30% 18%;
-  --secondary-foreground: 0 0% 98%;
-  
-  --muted: 212 30% 18%;
-  --muted-foreground: 215 20% 65%;
-  
-  --accent: 43 74% 49%;
-  --accent-foreground: 212 55% 12%;
-  
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 0 0% 98%;
-  
-  --border: 212 30% 20%;
-  --input: 212 30% 20%;
-  --ring: 43 74% 49%;
 }
 
 @layer base {
@@ -106,14 +44,12 @@
   }
   body {
     @apply bg-background text-foreground antialiased font-sans;
-    /* Optional: subtle grain or pattern for luxury feel */
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif tracking-tight text-mtc-navy dark:text-white;
+    @apply font-serif tracking-tight text-mtc-charcoal dark:text-white;
   }
 }
 
-/* Embla Carousel overrides */
 .embla {
   overflow: hidden;
 }
@@ -123,4 +59,14 @@
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
+}
+
+.diagonal-pattern {
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 2px,
+    transparent 2px,
+    transparent 8px
+  );
 }

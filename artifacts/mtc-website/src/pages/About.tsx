@@ -1,26 +1,19 @@
 import { Layout } from "@/components/layout/Layout";
-import { SectionHeading } from "@/components/layout/SectionHeading";
 import { motion } from "framer-motion";
+import { ShieldCheck, Target, Leaf } from "lucide-react";
 
 export default function About() {
   return (
     <Layout>
       {/* Page Header */}
-      <div className="bg-mtc-navy pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src={`${import.meta.env.BASE_URL}images/abstract-bg.png`} 
-            alt="Abstract Background" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div className="bg-mtc-charcoal pt-40 pb-24 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-5xl md:text-6xl font-serif text-white mb-4">About MTC Group</h1>
-            <div className="h-1 w-20 bg-mtc-gold mx-auto mb-6" />
+            <h1 className="text-5xl md:text-6xl font-serif text-white font-bold mb-6">About MTC Group</h1>
+            <div className="h-1 w-24 bg-mtc-red mx-auto mb-8" />
             <p className="text-xl text-white/80 max-w-2xl mx-auto font-light">
               Powering Global Trade. Building Sustainable Industries.
             </p>
@@ -30,16 +23,17 @@ export default function About() {
 
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="flex flex-col lg:flex-row gap-16">
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
+              className="lg:w-[60%]"
             >
-              <SectionHeading title="Who We Are" subtitle="Our Identity" />
-              <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <h2 className="text-4xl font-serif text-mtc-charcoal font-bold mb-8">Who We Are</h2>
+              <div className="space-y-6 text-lg text-mtc-charcoal font-light leading-relaxed">
                 <p>
-                  <strong className="text-mtc-navy font-semibold">MTC Group of Companies</strong> is a diversified international business group engaged in energy trading, petroleum infrastructure, logistics, real estate development, healthcare, education, and technology services.
+                  <strong className="font-bold">MTC Group of Companies</strong> is a diversified international business group engaged in energy trading, petroleum infrastructure, logistics, real estate development, healthcare, education, and technology services.
                 </p>
                 <p>
                   Through its subsidiaries and strategic partnerships, the group participates in global petroleum supply chains, infrastructure development projects, and industrial investments across multiple regions.
@@ -51,41 +45,65 @@ export default function About() {
             </motion.div>
 
             <motion.div 
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4 }}
-              className="relative"
+              className="lg:w-[40%] w-full"
             >
-              <div className="absolute inset-0 bg-mtc-gold translate-x-4 translate-y-4" />
-              {/* boardroom meeting professional */}
-              <img 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" 
-                alt="Corporate Leadership" 
-                className="relative z-10 w-full object-cover shadow-xl h-[600px]"
-              />
+              <div className="bg-mtc-red text-white p-10 shadow-2xl h-full flex flex-col justify-center">
+                <h3 className="text-2xl font-serif font-bold mb-8 text-white">At a Glance</h3>
+                <ul className="space-y-6 text-lg">
+                  <li className="flex flex-col border-b border-white/20 pb-3">
+                    <span className="text-white/70 text-sm uppercase tracking-wider mb-1">Founded</span>
+                    <span className="font-semibold">Washington, D.C., USA</span>
+                  </li>
+                  <li className="flex flex-col border-b border-white/20 pb-3">
+                    <span className="text-white/70 text-sm uppercase tracking-wider mb-1">Operations</span>
+                    <span className="font-semibold">Africa | Middle East | Europe | Asia</span>
+                  </li>
+                  <li className="flex flex-col border-b border-white/20 pb-3">
+                    <span className="text-white/70 text-sm uppercase tracking-wider mb-1">Sectors</span>
+                    <span className="font-semibold">6 core industries</span>
+                  </li>
+                  <li className="flex flex-col border-b border-white/20 pb-3">
+                    <span className="text-white/70 text-sm uppercase tracking-wider mb-1">Website</span>
+                    <span className="font-semibold">www.mtcgroup.com</span>
+                  </li>
+                  <li className="flex flex-col">
+                    <span className="text-white/70 text-sm uppercase tracking-wider mb-1">Email</span>
+                    <span className="font-semibold">info@mtcgroup.com</span>
+                  </li>
+                </ul>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Core Values / Approach */}
-      <section className="py-24 bg-gray-50 border-t border-gray-200">
+      {/* Core Values */}
+      <section className="py-24 bg-mtc-grey">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading title="Our Approach" subtitle="Strategic Vision" align="center" />
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-serif text-mtc-charcoal font-bold mb-4">Our Core Values</h2>
+            <div className="w-20 h-1 bg-mtc-red mx-auto" />
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: "Transparency",
-                desc: "Operating with absolute clarity and honesty across all international boundaries and partnerships."
+                desc: "Operating with absolute clarity and honesty across all international boundaries and partnerships.",
+                icon: ShieldCheck
               },
               {
                 title: "Responsible Management",
-                desc: "Ensuring all operations follow sound corporate governance principles and ethical standards."
+                desc: "Ensuring all operations follow sound corporate governance principles and ethical standards.",
+                icon: Target
               },
               {
                 title: "Sustainable Development",
-                desc: "Committing to long-term growth that benefits both stakeholders and the communities we operate in."
+                desc: "Committing to long-term growth that benefits both stakeholders and the communities we operate in.",
+                icon: Leaf
               }
             ].map((value, i) => (
               <motion.div
@@ -94,13 +112,13 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white p-10 border border-gray-100 shadow-sm hover:shadow-xl transition-shadow text-center group"
+                className="bg-white p-10 shadow-sm border-t-4 border-transparent hover:border-mtc-red hover:shadow-xl transition-all group text-center"
               >
-                <div className="w-16 h-16 bg-mtc-navy text-mtc-gold flex items-center justify-center rounded-full mx-auto mb-6 text-2xl font-serif group-hover:bg-mtc-gold group-hover:text-mtc-navy transition-colors">
-                  {i + 1}
+                <div className="w-20 h-20 bg-mtc-red rounded-full flex items-center justify-center text-white mx-auto mb-6 transition-transform group-hover:scale-110">
+                  <value.icon className="w-10 h-10" />
                 </div>
-                <h3 className="text-xl font-bold font-serif text-mtc-navy mb-4">{value.title}</h3>
-                <p className="text-muted-foreground">{value.desc}</p>
+                <h3 className="text-2xl font-bold font-serif text-mtc-charcoal mb-4">{value.title}</h3>
+                <p className="text-gray-600 font-light leading-relaxed">{value.desc}</p>
               </motion.div>
             ))}
           </div>

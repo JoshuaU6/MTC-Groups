@@ -3,16 +3,16 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Layout } from "@/components/layout/Layout";
-import { SectionHeading } from "@/components/layout/SectionHeading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Globe, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Globe } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, "Full name is required"),
+  company: z.string().optional(),
   email: z.string().email("Valid email is required"),
   phone: z.string().optional(),
   subject: z.string().min(1, "Please select a subject"),
@@ -24,11 +24,13 @@ type FormValues = z.infer<typeof formSchema>;
 export default function Contact() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      company: "",
       email: "",
       phone: "",
       subject: "",
@@ -38,37 +40,30 @@ export default function Contact() {
 
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
-    // Simulate API call since there's no backend for this static site
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    console.log("Form data:", data);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
     
+    setIsSuccess(true);
     toast({
       title: "Inquiry Submitted Successfully",
       description: "Thank you for reaching out. Our team will contact you shortly.",
-      variant: "default",
     });
     
     form.reset();
     setIsSubmitting(false);
+    setTimeout(() => setIsSuccess(false), 5000);
   };
 
   return (
     <Layout>
-      <div className="bg-mtc-navy pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <img 
-            src={`${import.meta.env.BASE_URL}images/abstract-bg.png`} 
-            alt="Abstract Background" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div className="bg-mtc-charcoal pt-40 pb-24 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h1 className="text-5xl md:text-6xl font-serif text-white mb-4">Get In Touch</h1>
-            <div className="h-1 w-20 bg-mtc-gold mx-auto mb-6" />
+            <h1 className="text-5xl md:text-6xl font-serif text-white font-bold mb-6">Contact Us</h1>
+            <div className="h-1 w-24 bg-mtc-red mx-auto mb-8" />
             <p className="text-xl text-white/80 max-w-2xl mx-auto font-light">
               We welcome strategic partnerships and investment inquiries.
             </p>
@@ -76,145 +71,154 @@ export default function Contact() {
         </div>
       </div>
 
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-mtc-grey">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+          <div className="flex flex-col lg:flex-row gap-16">
             
-            {/* Contact Info Sidebar */}
+            {/* Contact Form */}
             <motion.div 
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
-              className="lg:col-span-1 space-y-10"
+              className="lg:w-[60%]"
             >
-              <div>
-                <h3 className="text-2xl font-serif font-bold text-mtc-navy mb-6">Global Contact Center</h3>
+              <div className="bg-white p-10 md:p-12 shadow-xl border-t-4 border-mtc-red">
+                <h3 className="text-3xl font-serif font-bold text-mtc-charcoal mb-8">Send an Inquiry</h3>
                 
-                <div className="space-y-8">
-                  <div className="flex items-start">
-                    <div className="w-12 h-12 bg-white shadow-sm flex items-center justify-center rounded-sm mr-4 text-mtc-gold">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-mtc-navy mb-1">Headquarters</h4>
-                      <p className="text-muted-foreground text-sm">Washington Business District,<br/>DC 20001, USA</p>
-                    </div>
+                {isSuccess && (
+                  <div className="mb-8 p-4 bg-green-50 text-green-800 border border-green-200 font-medium">
+                    Thank you! Your inquiry has been submitted successfully.
                   </div>
+                )}
 
-                  <div className="flex items-start">
-                    <div className="w-12 h-12 bg-white shadow-sm flex items-center justify-center rounded-sm mr-4 text-mtc-gold">
-                      <Phone className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-mtc-navy mb-1">Direct Lines</h4>
-                      <div className="text-muted-foreground text-sm space-y-1">
-                        <p><span className="font-medium">Global:</span> +1 771 240 1273</p>
-                        <p><span className="font-medium">UK:</span> +44 747 619 8795</p>
-                        <p><span className="font-medium">France:</span> +33 756 756 465</p>
-                        <p><span className="font-medium">Lagos:</span> 0700 311 7444</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start">
-                    <div className="w-12 h-12 bg-white shadow-sm flex items-center justify-center rounded-sm mr-4 text-mtc-gold">
-                      <Mail className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-mtc-navy mb-1">Digital</h4>
-                      <div className="text-muted-foreground text-sm space-y-1">
-                        <p>info@mtcgroup.com</p>
-                        <p>www.mtcgroup.com</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Contact Form */}
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="lg:col-span-2"
-            >
-              <div className="bg-white p-8 md:p-12 shadow-xl border border-gray-100">
-                <h3 className="text-2xl font-serif font-bold text-mtc-navy mb-8">Send an Inquiry</h3>
-                
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-mtc-navy">Full Name *</label>
+                      <label className="text-sm font-bold text-mtc-charcoal uppercase tracking-wider">Full Name *</label>
                       <Input 
                         placeholder="John Doe" 
                         {...form.register("name")} 
-                        className={form.formState.errors.name ? "border-destructive" : ""}
+                        className={`bg-gray-50 border-gray-200 focus-visible:ring-mtc-red ${form.formState.errors.name ? "border-red-500 focus-visible:ring-red-500" : ""}`}
                       />
                       {form.formState.errors.name && (
-                        <p className="text-xs text-destructive">{form.formState.errors.name.message}</p>
+                        <p className="text-xs text-red-500 font-medium">{form.formState.errors.name.message}</p>
                       )}
                     </div>
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-mtc-navy">Email Address *</label>
+                      <label className="text-sm font-bold text-mtc-charcoal uppercase tracking-wider">Company</label>
                       <Input 
-                        placeholder="john@example.com" 
-                        {...form.register("email")}
-                        className={form.formState.errors.email ? "border-destructive" : ""}
+                        placeholder="Organization Name" 
+                        {...form.register("company")}
+                        className="bg-gray-50 border-gray-200 focus-visible:ring-mtc-red"
                       />
-                      {form.formState.errors.email && (
-                        <p className="text-xs text-destructive">{form.formState.errors.email.message}</p>
-                      )}
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-mtc-navy">Phone Number</label>
+                      <label className="text-sm font-bold text-mtc-charcoal uppercase tracking-wider">Email Address *</label>
+                      <Input 
+                        placeholder="john@example.com" 
+                        {...form.register("email")}
+                        className={`bg-gray-50 border-gray-200 focus-visible:ring-mtc-red ${form.formState.errors.email ? "border-red-500 focus-visible:ring-red-500" : ""}`}
+                      />
+                      {form.formState.errors.email && (
+                        <p className="text-xs text-red-500 font-medium">{form.formState.errors.email.message}</p>
+                      )}
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-sm font-bold text-mtc-charcoal uppercase tracking-wider">Phone</label>
                       <Input 
                         placeholder="+1 (555) 000-0000" 
                         {...form.register("phone")}
+                        className="bg-gray-50 border-gray-200 focus-visible:ring-mtc-red"
                       />
-                    </div>
-                    <div className="space-y-2">
-                      <label className="text-sm font-medium text-mtc-navy">Subject *</label>
-                      <select 
-                        {...form.register("subject")}
-                        className={`flex h-12 w-full rounded-none border bg-transparent px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-mtc-gold ${form.formState.errors.subject ? "border-destructive" : "border-border"}`}
-                      >
-                        <option value="">Select a subject...</option>
-                        <option value="Partnership Inquiry">Partnership Inquiry</option>
-                        <option value="Energy Trading">Energy Trading</option>
-                        <option value="Investment">Investment</option>
-                        <option value="General">General Inquiry</option>
-                      </select>
-                      {form.formState.errors.subject && (
-                        <p className="text-xs text-destructive">{form.formState.errors.subject.message}</p>
-                      )}
                     </div>
                   </div>
 
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-mtc-navy">Message *</label>
+                    <label className="text-sm font-bold text-mtc-charcoal uppercase tracking-wider">Subject *</label>
+                    <select 
+                      {...form.register("subject")}
+                      className={`flex h-10 w-full rounded-md border bg-gray-50 border-gray-200 px-3 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mtc-red ${form.formState.errors.subject ? "border-red-500 focus-visible:ring-red-500" : ""}`}
+                    >
+                      <option value="">Select a subject...</option>
+                      <option value="Partnership Inquiry">Partnership Inquiry</option>
+                      <option value="Energy Trading">Energy Trading</option>
+                      <option value="Investment">Investment</option>
+                      <option value="General">General</option>
+                    </select>
+                    {form.formState.errors.subject && (
+                      <p className="text-xs text-red-500 font-medium">{form.formState.errors.subject.message}</p>
+                    )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-mtc-charcoal uppercase tracking-wider">Message *</label>
                     <Textarea 
                       placeholder="How can we help you?" 
-                      className={`min-h-[150px] ${form.formState.errors.message ? "border-destructive" : ""}`}
+                      className={`min-h-[150px] bg-gray-50 border-gray-200 focus-visible:ring-mtc-red ${form.formState.errors.message ? "border-red-500 focus-visible:ring-red-500" : ""}`}
                       {...form.register("message")}
                     />
                     {form.formState.errors.message && (
-                      <p className="text-xs text-destructive">{form.formState.errors.message.message}</p>
+                      <p className="text-xs text-red-500 font-medium">{form.formState.errors.message.message}</p>
                     )}
                   </div>
 
                   <Button 
                     type="submit" 
-                    size="lg" 
-                    className="w-full md:w-auto"
+                    className="w-full bg-mtc-red hover:bg-red-800 text-white text-lg py-6"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Sending..." : "Submit Inquiry"}
-                    {!isSubmitting && <Send className="w-4 h-4 ml-2" />}
+                    {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                   </Button>
                 </form>
+              </div>
+            </motion.div>
+
+            {/* Contact Info Sidebar */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="lg:w-[40%]"
+            >
+              <div className="bg-mtc-charcoal text-white p-10 md:p-12 shadow-xl h-full flex flex-col justify-center">
+                <h3 className="text-3xl font-serif font-bold text-white mb-8">Corporate Offices</h3>
+                
+                <div className="space-y-8 font-light text-lg">
+                  <div className="flex items-start border-b border-white/10 pb-6">
+                    <Mail className="w-6 h-6 mr-4 text-mtc-red mt-1" />
+                    <div>
+                      <h4 className="font-bold text-white mb-1 uppercase tracking-wider text-sm">Email</h4>
+                      <p className="text-white/80">info@mtcgroup.com</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start border-b border-white/10 pb-6">
+                    <Globe className="w-6 h-6 mr-4 text-mtc-red mt-1" />
+                    <div>
+                      <h4 className="font-bold text-white mb-1 uppercase tracking-wider text-sm">Website</h4>
+                      <p className="text-white/80">www.mtcgroup.com</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start border-b border-white/10 pb-6">
+                    <MapPin className="w-6 h-6 mr-4 text-mtc-red mt-1" />
+                    <div>
+                      <h4 className="font-bold text-white mb-1 uppercase tracking-wider text-sm">Headquarters</h4>
+                      <p className="text-white/80 leading-relaxed">Washington Business District<br/>Washington, DC 20001, USA</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start">
+                    <Phone className="w-6 h-6 mr-4 text-mtc-red mt-1" />
+                    <div>
+                      <h4 className="font-bold text-white mb-1 uppercase tracking-wider text-sm">Direct Lines</h4>
+                      <p className="text-white/80 mb-1"><span className="font-medium text-white">Global Line:</span> +1 771 240 1273</p>
+                      <p className="text-white/80"><span className="font-medium text-white">Lagos Line:</span> 0700 311 7444</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
