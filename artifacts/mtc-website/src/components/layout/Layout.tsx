@@ -88,6 +88,7 @@ export function Layout({ children }: LayoutProps) {
                 src={`${import.meta.env.BASE_URL}images/mtc-logo.png`}
                 alt="MTC Group of Companies logo"
                 className="h-14 w-auto object-contain"
+                style={{ filter: isDarkNav ? 'brightness(0) invert(1)' : 'none' }}
               />
             </Link>
 
@@ -166,6 +167,7 @@ export function Layout({ children }: LayoutProps) {
                   src={`${import.meta.env.BASE_URL}images/mtc-logo.png`}
                   alt="MTC Group of Companies logo"
                   className="h-10 w-auto object-contain"
+                  style={{ filter: 'none' }}
                 />
                 <button
                   onClick={closeMobileMenu}
