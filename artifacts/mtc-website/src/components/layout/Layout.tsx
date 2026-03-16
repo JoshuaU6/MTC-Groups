@@ -56,7 +56,7 @@ export function Layout({ children }: LayoutProps) {
           <span className="flex items-center"><Phone className="w-3 h-3 mr-2 text-mtc-red" /> Global: +1 771 240 1273</span>
         </div>
         <div>
-          <span className="flex items-center"><Mail className="w-3 h-3 mr-2 text-mtc-red" /> info@mtcgroup.com</span>
+          <span className="flex items-center"><Mail className="w-3 h-3 mr-2 text-mtc-red" /> info@mtc-groups.com</span>
         </div>
       </div>
 
@@ -66,10 +66,11 @@ export function Layout({ children }: LayoutProps) {
           <div className="flex justify-between items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center group">
-              <div className="flex flex-col">
-                <span className={`font-serif text-3xl font-bold tracking-wider ${logoColor}`}>MTC</span>
-                <span className={`text-[0.65rem] tracking-[0.1em] font-sans font-medium uppercase ${logoSubColor}`}>Group of Companies</span>
-              </div>
+              <img
+                src={`${import.meta.env.BASE_URL}images/mtc-logo.png`}
+                alt="MTC Group of Companies"
+                className="h-14 w-auto object-contain"
+              />
             </Link>
 
             {/* Desktop Nav */}
@@ -154,9 +155,12 @@ export function Layout({ children }: LayoutProps) {
             
             {/* Col 1 */}
             <div className="space-y-6">
-              <Link href="/" className="flex flex-col inline-block">
-                <span className="font-serif text-3xl font-bold tracking-wider text-mtc-red">MTC</span>
-                <span className="text-[0.65rem] tracking-[0.1em] font-sans font-medium uppercase text-white/90">Group of Companies</span>
+              <Link href="/" className="inline-block">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/mtc-logo.png`}
+                  alt="MTC Group of Companies"
+                  className="h-12 w-auto object-contain"
+                />
               </Link>
               <p className="text-white/70 text-sm leading-relaxed pr-4">
                 Powering Global Trade. Building Sustainable Industries.
@@ -214,11 +218,11 @@ export function Layout({ children }: LayoutProps) {
               <ul className="space-y-4">
                 <li className="flex items-center text-sm text-white/70">
                   <Mail className="w-4 h-4 mr-3 text-mtc-red shrink-0" />
-                  <span>info@mtcgroup.com</span>
+                  <span>info@mtc-groups.com</span>
                 </li>
                 <li className="flex items-center text-sm text-white/70">
                   <span className="w-4 h-4 mr-3 flex items-center justify-center text-mtc-red font-bold">🌐</span>
-                  <span>www.mtcgroup.com</span>
+                  <span>www.mtc-groups.com</span>
                 </li>
                 <li className="flex items-center text-sm text-white/70">
                   <Phone className="w-4 h-4 mr-3 text-mtc-red shrink-0" />

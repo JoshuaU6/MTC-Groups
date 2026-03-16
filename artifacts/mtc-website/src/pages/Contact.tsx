@@ -190,7 +190,7 @@ export default function Contact() {
                     <Mail className="w-6 h-6 mr-4 text-mtc-red mt-1" />
                     <div>
                       <h4 className="font-bold text-white mb-1 uppercase tracking-wider text-sm">Email</h4>
-                      <p className="text-white/80">info@mtcgroup.com</p>
+                      <p className="text-white/80">info@mtc-groups.com</p>
                     </div>
                   </div>
 
@@ -198,7 +198,7 @@ export default function Contact() {
                     <Globe className="w-6 h-6 mr-4 text-mtc-red mt-1" />
                     <div>
                       <h4 className="font-bold text-white mb-1 uppercase tracking-wider text-sm">Website</h4>
-                      <p className="text-white/80">www.mtcgroup.com</p>
+                      <p className="text-white/80">www.mtc-groups.com</p>
                     </div>
                   </div>
 

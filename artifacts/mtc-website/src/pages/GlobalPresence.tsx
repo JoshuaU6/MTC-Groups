@@ -107,7 +107,7 @@ export default function GlobalPresence() {
       <div className="bg-mtc-red text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-2xl font-serif tracking-wide">
-            Global Inquiries: <span className="font-bold">+1 771 240 1273</span> | <span className="font-bold">info@mtcgroup.com</span>
+            Global Inquiries: <span className="font-bold">+1 771 240 1273</span> | <span className="font-bold">info@mtc-groups.com</span>
           </p>
         </div>
       </div>

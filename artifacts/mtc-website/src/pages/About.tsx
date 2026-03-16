@@ -67,11 +67,11 @@ export default function About() {
                   </li>
                   <li className="flex flex-col border-b border-white/20 pb-3">
                     <span className="text-white/70 text-sm uppercase tracking-wider mb-1">Website</span>
-                    <span className="font-semibold">www.mtcgroup.com</span>
+                    <span className="font-semibold">www.mtc-groups.com</span>
                   </li>
                   <li className="flex flex-col">
                     <span className="text-white/70 text-sm uppercase tracking-wider mb-1">Email</span>
-                    <span className="font-semibold">info@mtcgroup.com</span>
+                    <span className="font-semibold">info@mtc-groups.com</span>
                   </li>
                 </ul>
               </div>

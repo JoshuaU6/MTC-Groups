@@ -1,3 +1,30 @@
+# MTC Group of Companies Website
+
+## Overview
+
+Multi-page corporate website for MTC Group of Companies built with React + Vite + Tailwind CSS.
+
+**Live site domain:** mtc-groups.com
+**Contact email:** info@mtc-groups.com
+
+## Pages
+- `/` — Home (hero carousel + stats + about + sectors preview + CTA)
+- `/about` — About MTC Group
+- `/sectors` — Our 6 sectors (Energy, Infrastructure, Real Estate, Healthcare, Education, Technology)
+- `/subsidiaries` — MainKey Limited + Safwad Limited
+- `/leadership` — A.S. Abba (Chairman) + 4 Directors
+- `/global-presence` — 5 offices: Washington DC, London, Paris, Lagos, Hong Kong
+- `/contact` — Contact form + office details
+
+## Brand
+- Primary Red: #C0001A
+- Charcoal: #1A1A1A
+- Gold (chairman only): #B8962E
+- Fonts: Playfair Display (headings), DM Sans (body)
+- Logo: /public/images/mtc-logo.png (transparent background)
+
+---
+
 # Workspace
 
 ## Overview
