@@ -2,37 +2,44 @@ import { Layout } from "@/components/layout/Layout";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import { motion } from "framer-motion";
 import { Flame, Warehouse, Building2, HeartPulse, GraduationCap, Cpu } from "lucide-react";
+import { Link } from "wouter";
 
 const SECTORS = [
   {
     icon: Flame,
     title: "Energy & Petroleum",
-    desc: "Oil & gas trading, petroleum supply chains, refinery participation, fuel distribution networks."
+    desc: "Oil & gas trading, petroleum supply chains, refinery participation, fuel distribution networks.",
+    href: "/sectors/energy-petroleum",
   },
   {
     icon: Warehouse,
     title: "Infrastructure",
-    desc: "Tank farms, petroleum storage, industrial infrastructure, energy logistics."
+    desc: "Tank farms, petroleum storage, industrial infrastructure, energy logistics.",
+    href: "/sectors/infrastructure",
   },
   {
     icon: Building2,
     title: "Real Estate",
-    desc: "Commercial, industrial, and residential developments across emerging markets."
+    desc: "Commercial, industrial, and residential developments across emerging markets.",
+    href: "/sectors/real-estate",
   },
   {
     icon: HeartPulse,
     title: "Healthcare",
-    desc: "Hospital investments, medical infrastructure development, and healthcare services."
+    desc: "Hospital investments, medical infrastructure development, and healthcare services.",
+    href: "/sectors/healthcare",
   },
   {
     icon: GraduationCap,
     title: "Education",
-    desc: "Educational institutions and university development initiatives globally."
+    desc: "Educational institutions and university development initiatives globally.",
+    href: "/sectors/education",
   },
   {
     icon: Cpu,
     title: "Technology",
-    desc: "Digital solutions, technology integration services, and industrial automation."
+    desc: "Digital solutions, technology integration services, and industrial automation.",
+    href: "/sectors/technology",
   }
 ];
 
@@ -61,25 +68,27 @@ export default function Sectors() {
               const Icon = sector.icon;
               return (
                 <ScrollReveal key={sector.title} delay={index * 80}>
-                  <div className="relative h-[300px] bg-white shadow-sm hover:shadow-xl transition-all duration-300 border-l-4 border-transparent hover:border-mtc-red group overflow-hidden p-10">
-                    <div className="w-16 h-16 bg-mtc-red rounded-full flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-8 h-8" aria-hidden="true" />
-                    </div>
-                    <h2 className="text-2xl font-serif text-mtc-charcoal font-bold mb-3">{sector.title}</h2>
-                    <div className="w-12 h-1 bg-gray-200 mb-4 group-hover:bg-mtc-red transition-colors duration-300" />
-                    <p className="text-gray-600 font-light leading-relaxed text-sm">
-                      {sector.desc}
-                    </p>
+                  <Link href={sector.href} className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-mtc-red" aria-label={`Explore the ${sector.title} sector`}>
+                    <div className="relative h-[300px] bg-white shadow-sm hover:shadow-xl transition-all duration-300 border-l-4 border-transparent hover:border-mtc-red group overflow-hidden p-10 cursor-pointer">
+                      <div className="w-16 h-16 bg-mtc-red rounded-full flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="w-8 h-8" aria-hidden="true" />
+                      </div>
+                      <h2 className="text-2xl font-serif text-mtc-charcoal font-bold mb-3">{sector.title}</h2>
+                      <div className="w-12 h-1 bg-gray-200 mb-4 group-hover:bg-mtc-red transition-colors duration-300" />
+                      <p className="text-gray-600 font-light leading-relaxed text-sm">
+                        {sector.desc}
+                      </p>
 
-                    {/* Hover overlay */}
-                    <div
-                      className="absolute inset-0 bg-mtc-red flex flex-col items-center justify-center opacity-0 group-hover:opacity-95 transition-opacity duration-300 pointer-events-none"
-                      aria-hidden="true"
-                    >
-                      <Icon className="w-12 h-12 text-white mb-4 opacity-80" />
-                      <span className="text-white text-xl font-bold tracking-wide">Learn More →</span>
+                      {/* Hover overlay */}
+                      <div
+                        className="absolute inset-0 bg-mtc-red flex flex-col items-center justify-center opacity-0 group-hover:opacity-95 transition-opacity duration-300"
+                        aria-hidden="true"
+                      >
+                        <Icon className="w-12 h-12 text-white mb-4 opacity-80" />
+                        <span className="text-white text-xl font-bold tracking-wide">Explore Sector →</span>
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </ScrollReveal>
               );
             })}

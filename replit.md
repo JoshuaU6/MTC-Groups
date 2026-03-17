@@ -8,13 +8,26 @@ Multi-page corporate website for MTC Group of Companies built with React + Vite 
 **Contact email:** info@mtc-groups.com
 
 ## Pages
-- `/` — Home (hero carousel + stats + about + sectors preview + CTA)
+- `/` — Home (hero carousel + stats + about + clickable sectors preview + CTA)
 - `/about` — About MTC Group
-- `/sectors` — Our 6 sectors (Energy, Infrastructure, Real Estate, Healthcare, Education, Technology)
-- `/subsidiaries` — MainKey Limited + Safwad Limited
-- `/leadership` — A.S. Abba (Chairman) + 4 Directors
+- `/sectors` — Our 6 sectors (all cards clickable)
+- `/sectors/energy-petroleum` — Energy & Petroleum detail (real photos: offshore platforms + pipeline; videos: vid1, vid2)
+- `/sectors/infrastructure` — Infrastructure detail (real photos: img2-13 pipeline installation; videos: vid3-vid8)
+- `/sectors/real-estate` — Real Estate detail (Unsplash imagery)
+- `/sectors/healthcare` — Healthcare detail (Unsplash imagery)
+- `/sectors/education` — Education detail (Unsplash imagery)
+- `/sectors/technology` — Technology detail (Unsplash imagery)
+- `/subsidiaries` — MainKey Limited + Safwad Limited (logos displayed)
+- `/leadership` — A.S. Abba (Chairman photo + bio) + 4 Directors
 - `/global-presence` — 5 offices: Washington DC, London, Paris, Lagos, Hong Kong
 - `/contact` — Contact form + office details
+
+## Media Assets
+- `public/media/img1–img13.jpg` — Real project photos (offshore platforms + pipeline installation, from Google Drive)
+- `public/media/vid1–vid8.mp4` — Real project videos (from Google Drive)
+- `public/images/mtc-logo.png` — MTC Group logo
+- `public/images/mainkey-logo.jpg` — MainKey Limited logo
+- `public/images/safwad-logo.jpg` — Safwad Limited logo
 
 ## Brand
 - Primary Red: #C0001A

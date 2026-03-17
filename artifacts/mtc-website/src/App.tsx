@@ -13,6 +13,14 @@ import GlobalPresence from "@/pages/GlobalPresence";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 
+// Sector detail pages
+import EnergyPetroleum from "@/pages/sectors/EnergyPetroleum";
+import Infrastructure from "@/pages/sectors/Infrastructure";
+import RealEstate from "@/pages/sectors/RealEstate";
+import Healthcare from "@/pages/sectors/Healthcare";
+import Education from "@/pages/sectors/Education";
+import Technology from "@/pages/sectors/Technology";
+
 const queryClient = new QueryClient();
 
 function Router() {
@@ -21,6 +29,12 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/sectors" component={Sectors} />
+      <Route path="/sectors/energy-petroleum" component={EnergyPetroleum} />
+      <Route path="/sectors/infrastructure" component={Infrastructure} />
+      <Route path="/sectors/real-estate" component={RealEstate} />
+      <Route path="/sectors/healthcare" component={Healthcare} />
+      <Route path="/sectors/education" component={Education} />
+      <Route path="/sectors/technology" component={Technology} />
       <Route path="/subsidiaries" component={Subsidiaries} />
       <Route path="/leadership" component={Leadership} />
       <Route path="/global-presence" component={GlobalPresence} />
