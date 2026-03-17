@@ -12,14 +12,14 @@ const projects: Project[] = [
     title: "Vocational & Technical Training Institute",
     description:
       "Addressing the skills gap in Nigeria's oil & gas, construction, and manufacturing sectors, MTC Group is establishing a vocational training institute offering certified programmes in pipefitting, electrical engineering, welding, and industrial automation.",
-    image: "https://images.unsplash.com/photo-1627556592933-e5ddb67e2c4e?w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1000&q=80",
     tags: ["Vocational Training", "TVET", "Skills Development"],
   },
   {
     title: "University Affiliate Research Centre",
     description:
       "In partnership with leading international universities, MTC Group is co-funding a research centre focused on sustainable energy, environmental engineering, and digital infrastructure. The centre bridges academic research with industrial application across MTC's core business sectors.",
-    image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1562774053-701939374585?w=1000&q=80",
     tags: ["Research", "University", "Innovation"],
   },
   {
