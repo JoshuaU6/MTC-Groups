@@ -83,13 +83,14 @@ export function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             {/* Logo */}
-            <Link href="/" className="flex items-center group" aria-label="MTC Group of Companies — Home">
-              <img
-                src={`${import.meta.env.BASE_URL}images/mtc-logo.png`}
-                alt="MTC Group of Companies logo"
-                className="h-14 w-auto object-contain"
-                style={{ filter: isDarkNav ? 'brightness(0) invert(1)' : 'none' }}
-              />
+            <Link href="/" aria-label="MTC Group of Companies — Home">
+              <div className={`flex items-center rounded-lg transition-all duration-300 ${isDarkNav ? 'bg-white px-3 py-1.5 shadow-lg' : ''}`}>
+                <img
+                  src={`${import.meta.env.BASE_URL}images/mtc-logo.png`}
+                  alt="MTC Group of Companies logo"
+                  className="h-16 w-auto object-contain"
+                />
+              </div>
             </Link>
 
             {/* Desktop Nav */}

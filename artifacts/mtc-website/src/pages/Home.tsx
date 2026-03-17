@@ -1,10 +1,11 @@
 import { Layout } from "@/components/layout/Layout";
 import { HeroCarousel } from "@/components/home/HeroCarousel";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { StatCounter } from "@/components/StatCounter";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Globe, Building2, Users, Briefcase, Flame, Warehouse, ChevronRight } from "lucide-react";
+import { Building2, Flame, Warehouse, ChevronRight } from "lucide-react";
 
 const STATS = [
   { label: "Sectors", value: "6+" },
@@ -22,18 +23,8 @@ export default function Home() {
       <section className="bg-white border-b border-gray-100 relative z-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-12 divide-y md:divide-y-0 md:divide-x divide-gray-200">
-            {STATS.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center py-4 md:py-0"
-              >
-                <div className="text-4xl md:text-5xl font-serif text-mtc-red font-bold mb-2">{stat.value}</div>
-                <div className="text-sm text-mtc-charcoal uppercase tracking-widest font-medium">{stat.label}</div>
-              </motion.div>
+            {STATS.map((stat) => (
+              <StatCounter key={stat.label} value={stat.value} label={stat.label} />
             ))}
           </div>
         </div>
