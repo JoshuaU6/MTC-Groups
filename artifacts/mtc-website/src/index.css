@@ -131,6 +131,11 @@
 .reveal-delay-300 { transition-delay: 300ms; }
 .reveal-delay-400 { transition-delay: 400ms; }
 
+/* ── Sector card hover overlay ──────────────────────────────────── */
+.sector-card:hover .sector-hover-overlay {
+  opacity: 0.95 !important;
+}
+
 /* ── Focus-visible ring for keyboard nav ────────────────────────── */
 :focus-visible {
   outline: 2px solid #C0001A;

@@ -128,14 +128,14 @@ export default function Home() {
             ].map((sector, i) => (
               <ScrollReveal key={sector.title} delay={i * 100}>
                 <Link href={sector.href} className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-mtc-red" aria-label={`Explore ${sector.title}`}>
-                  <div className="relative group bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 border-l-4 border-transparent hover:border-mtc-red h-full overflow-hidden">
+                  <div className="sector-card relative group bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 border-l-4 border-transparent hover:border-mtc-red h-full overflow-hidden">
                     <div className="w-16 h-16 bg-mtc-red rounded-full flex items-center justify-center text-white mb-8 group-hover:scale-110 transition-transform duration-300">
                       <sector.icon className="w-8 h-8" aria-hidden="true" />
                     </div>
                     <h3 className="text-2xl font-serif font-bold text-mtc-charcoal mb-4">{sector.title}</h3>
                     <p className="text-gray-600 font-light leading-relaxed">{sector.desc}</p>
                     <div
-                      className="absolute inset-0 bg-mtc-red flex flex-col items-center justify-center opacity-0 group-hover:opacity-95 transition-opacity duration-300"
+                      className="sector-hover-overlay absolute inset-0 bg-mtc-red flex flex-col items-center justify-center opacity-0 transition-opacity duration-300"
                       aria-hidden="true"
                     >
                       <sector.icon className="w-12 h-12 text-white mb-4 opacity-80" />

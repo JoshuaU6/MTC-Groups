@@ -69,7 +69,7 @@ export default function Sectors() {
               return (
                 <ScrollReveal key={sector.title} delay={index * 80}>
                   <Link href={sector.href} className="block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-mtc-red" aria-label={`Explore the ${sector.title} sector`}>
-                    <div className="relative h-[300px] bg-white shadow-sm hover:shadow-xl transition-all duration-300 border-l-4 border-transparent hover:border-mtc-red group overflow-hidden p-10 cursor-pointer">
+                    <div className="sector-card relative h-[300px] bg-white shadow-sm hover:shadow-xl transition-all duration-300 border-l-4 border-transparent hover:border-mtc-red group overflow-hidden p-10 cursor-pointer">
                       <div className="w-16 h-16 bg-mtc-red rounded-full flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
                         <Icon className="w-8 h-8" aria-hidden="true" />
                       </div>
@@ -81,7 +81,7 @@ export default function Sectors() {
 
                       {/* Hover overlay */}
                       <div
-                        className="absolute inset-0 bg-mtc-red flex flex-col items-center justify-center opacity-0 group-hover:opacity-95 transition-opacity duration-300"
+                        className="sector-hover-overlay absolute inset-0 bg-mtc-red flex flex-col items-center justify-center opacity-0 transition-opacity duration-300"
                         aria-hidden="true"
                       >
                         <Icon className="w-12 h-12 text-white mb-4 opacity-80" />
