@@ -42,19 +42,34 @@ export default function Leadership() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Chairman Feature Block */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="border-l-4 border-mtc-gold pl-8 md:pl-12 mb-24"
+            className="mb-24"
           >
-            <h2 className="text-5xl font-serif font-bold text-white mb-2">A.S. Abba</h2>
-            <p className="text-mtc-gold font-bold tracking-widest uppercase text-sm mb-8">Chairman, MTC Group of Companies</p>
-            
-            <p className="text-lg md:text-xl text-white/80 leading-relaxed font-light mb-10 max-w-4xl">
-              "A.S. Abba serves as the Chairman of MTC Group of Companies, a diversified business group engaged in energy trading, international commerce, agriculture, real estate development, healthcare, education, and technology services. As Chairman, he provides strategic leadership and oversight for the group's operations and long-term growth initiatives across multiple sectors. His vision for MTC Group is to establish a globally recognised business platform that connects international markets through strategic partnerships, responsible investments, and innovative solutions."
-            </p>
-            <div className="w-full max-w-md h-px bg-mtc-gold/50" />
+            <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-start border-l-4 border-mtc-gold pl-8 md:pl-12">
+              {/* Photo */}
+              <div className="flex-shrink-0">
+                <div className="w-52 h-64 overflow-hidden shadow-2xl border-2 border-mtc-gold/30">
+                  <img
+                    src="/images/abba-photo.jpg"
+                    alt="A.S. Abba — Chairman, MTC Group of Companies"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+              </div>
+
+              {/* Bio */}
+              <div className="flex-grow">
+                <h2 className="text-5xl font-serif font-bold text-white mb-2">A.S. Abba</h2>
+                <p className="text-mtc-gold font-bold tracking-widest uppercase text-sm mb-8">Chairman, MTC Group of Companies</p>
+                <p className="text-lg md:text-xl text-white/80 leading-relaxed font-light mb-10 max-w-4xl">
+                  "A.S. Abba serves as the Chairman of MTC Group of Companies, a diversified business group engaged in energy trading, international commerce, agriculture, real estate development, healthcare, education, and technology services. As Chairman, he provides strategic leadership and oversight for the group's operations and long-term growth initiatives across multiple sectors. His vision for MTC Group is to establish a globally recognised business platform that connects international markets through strategic partnerships, responsible investments, and innovative solutions."
+                </p>
+                <div className="w-full max-w-md h-px bg-mtc-gold/50" />
+              </div>
+            </div>
           </motion.div>
 
           {/* Leadership Grid */}

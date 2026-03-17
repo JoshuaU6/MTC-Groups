@@ -229,7 +229,7 @@ export function Layout({ children }: LayoutProps) {
                 <img
                   src={`${import.meta.env.BASE_URL}images/mtc-logo.png`}
                   alt="MTC Group of Companies logo"
-                  className="h-20 w-auto object-contain"
+                  className="h-40 w-auto object-contain"
                 />
               </Link>
               <p className="text-white/70 text-sm leading-relaxed pr-4">

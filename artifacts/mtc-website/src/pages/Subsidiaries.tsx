@@ -31,15 +31,6 @@ export default function Subsidiaries() {
               viewport={{ once: true }}
               className="bg-white shadow-xl border-t-4 border-mtc-red overflow-hidden"
             >
-              {/* Logo banner */}
-              <div className="flex items-center justify-center bg-white border-b border-gray-100 py-10 px-10">
-                <img
-                  src="/images/mainkey-logo.jpg"
-                  alt="MainKey Limited — Global Energy & Commodity Trading"
-                  className="max-h-40 w-auto object-contain"
-                />
-              </div>
-
               {/* Content */}
               <div className="p-10 md:p-14">
                 <div className="mb-6">
@@ -47,7 +38,15 @@ export default function Subsidiaries() {
                     Energy & Trading Division
                   </span>
                 </div>
-                <h2 className="text-4xl font-serif font-bold text-mtc-charcoal mb-4">MainKey Limited</h2>
+                {/* Company name + logo side by side */}
+                <div className="flex items-center gap-5 mb-4">
+                  <img
+                    src="/images/mainkey-logo.jpg"
+                    alt="MainKey Limited logo"
+                    className="h-16 w-auto object-contain flex-shrink-0"
+                  />
+                  <h2 className="text-4xl font-serif font-bold text-mtc-charcoal leading-tight">MainKey Limited</h2>
+                </div>
                 <p className="text-xl text-gray-600 font-light mb-10 italic">
                   International petroleum trading and energy commodity solutions.
                 </p>
@@ -88,15 +87,6 @@ export default function Subsidiaries() {
               transition={{ delay: 0.1 }}
               className="bg-white shadow-xl border-t-4 border-mtc-red overflow-hidden"
             >
-              {/* Logo banner */}
-              <div className="flex items-center justify-center bg-white border-b border-gray-100 py-10 px-10">
-                <img
-                  src="/images/safwad-logo.jpg"
-                  alt="Safwad Limited logo"
-                  className="max-h-40 w-auto object-contain"
-                />
-              </div>
-
               {/* Content */}
               <div className="p-10 md:p-14">
                 <div className="mb-6">
@@ -104,7 +94,15 @@ export default function Subsidiaries() {
                     International Trade Division
                   </span>
                 </div>
-                <h2 className="text-4xl font-serif font-bold text-mtc-charcoal mb-4">Safwad Limited</h2>
+                {/* Company name + logo side by side */}
+                <div className="flex items-center gap-5 mb-4">
+                  <img
+                    src="/images/safwad-logo.jpg"
+                    alt="Safwad Limited logo"
+                    className="h-16 w-auto object-contain flex-shrink-0"
+                  />
+                  <h2 className="text-4xl font-serif font-bold text-mtc-charcoal leading-tight">Safwad Limited</h2>
+                </div>
                 <p className="text-xl text-gray-600 font-light mb-10 italic">
                   Specialized import, export, and distribution across global markets.
                 </p>
