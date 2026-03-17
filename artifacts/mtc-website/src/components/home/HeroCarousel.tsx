@@ -8,37 +8,65 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const slides = [
   {
+    image: "/images/hero1.jpg",
+    title: "Powering Global Energy",
+    subtitle: "World-class refinery operations and energy infrastructure delivering industrial excellence around the clock.",
+    cta: "Explore Energy",
+    href: "/sectors/energy-petroleum"
+  },
+  {
+    image: "/images/hero2.jpg",
+    title: "Energy & Petroleum",
+    subtitle: "Global petroleum supply chains, refinery participation, and fuel distribution networks across four continents.",
+    cta: "Our Sectors",
+    href: "/sectors"
+  },
+  {
+    image: "/images/hero3.jpg",
+    title: "Global Maritime Trade",
+    subtitle: "Strategic port operations and tanker logistics connecting international markets through seamless energy supply chains.",
+    cta: "Partner With Us",
+    href: "/contact"
+  },
+  {
+    image: "/images/hero4.jpg",
+    title: "MTC Gulf Bay Refinery",
+    subtitle: "Our flagship refinery facility — a landmark investment in clean, efficient, and large-scale petroleum processing.",
+    cta: "Learn More",
+    href: "/about"
+  },
+  {
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80",
-    title: "Powering Global Trade",
-    subtitle: "Building Sustainable Industries through strategic investment and operational excellence.",
+    title: "Building Sustainable Industries",
+    subtitle: "Strategic investment and operational excellence across energy, infrastructure, real estate, and trade.",
     cta: "Partner With Us",
     href: "/contact"
   },
   {
     image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=1920&q=80",
-    title: "Energy & Petroleum",
-    subtitle: "Global petroleum supply chains, refinery participation, fuel distribution networks.",
+    title: "Infrastructure Development",
+    subtitle: "Tank farms, petroleum storage, industrial infrastructure, and energy logistics at scale.",
     cta: "Explore Our Sectors",
     href: "/sectors"
   },
   {
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1920&q=80",
-    title: "Infrastructure Development",
-    subtitle: "Tank farms, petroleum storage, industrial infrastructure, energy logistics.",
-    cta: "Learn More",
-    href: "/about"
-  },
-  {
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80",
     title: "Global Reach",
     subtitle: "Operating across four continents through strategic partnerships and international business networks.",
     cta: "Our Global Presence",
     href: "/global-presence"
   },
   {
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80",
+    title: "Technology & Innovation",
+    subtitle: "Digital solutions, IT infrastructure, and technology services powering our group's operational backbone.",
+    cta: "Explore Technology",
+    href: "/sectors/technology"
+  },
+  {
     image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=1920&q=80",
     title: "Healthcare & Education",
-    subtitle: "Hospital investments, medical infrastructure development, and educational institutions.",
+    subtitle: "Hospital investments, medical infrastructure development, and world-class educational institutions.",
     cta: "Contact Us",
     href: "/contact"
   }
