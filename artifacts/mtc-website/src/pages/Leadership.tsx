@@ -1,21 +1,30 @@
 import { Layout } from "@/components/layout/Layout";
 import { motion } from "framer-motion";
+import { Mail } from "lucide-react";
 
 const DIRECTORS = [
   {
+    name: "Engr. Ahmed Bello",
     role: "Director of Energy & Trading",
+    email: "energy@mtc-groups.com",
     desc: "Overseeing energy trading operations and petroleum supply activities through MainKey Limited."
   },
   {
+    name: "Jean-Luc Fournier",
     role: "Director of International Trade",
+    email: "trade@mtc-groups.com",
     desc: "Overseeing import and export activities, agricultural commodities trading, and product distribution through Safwad Limited."
   },
   {
-    role: "Director of Infrastructure & Real Estate",
-    desc: "Responsible for infrastructure development and real estate investment initiatives."
+    name: "Engr. David Okonkwo",
+    role: "Director of Infrastructure",
+    email: "infrastructure@mtc-groups.com",
+    desc: "Responsible for infrastructure development, pipeline construction, and real estate investment initiatives."
   },
   {
+    name: "Arch. L. Abubakar",
     role: "Director of Finance",
+    email: "finance@mtc-groups.com",
     desc: "Overseeing financial management, investment strategies, and corporate financial planning."
   }
 ];
@@ -83,10 +92,22 @@ export default function Leadership() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="bg-mtc-charcoal-light border-t-4 border-mtc-gold p-8 flex flex-col h-full hover:bg-gray-800 transition-colors"
+                  className="bg-white/5 border-t-4 border-mtc-red p-8 flex flex-col h-full hover:bg-white/10 transition-colors"
                 >
-                  <h4 className="text-xl font-serif font-bold text-white mb-4 leading-snug">{director.role}</h4>
-                  <p className="text-white/60 text-sm leading-relaxed font-light mt-auto">{director.desc}</p>
+                  <div className="mb-5">
+                    <h4 className="text-lg font-bold text-mtc-red uppercase tracking-wider mb-3 leading-snug">{director.role}</h4>
+                    <h3 className="text-2xl font-serif font-bold text-white leading-tight">{director.name}</h3>
+                  </div>
+                  <div className="h-px w-10 bg-white/20 mb-5" />
+                  <p className="text-white/60 text-sm leading-relaxed font-light mb-6 flex-grow">{director.desc}</p>
+                  <a
+                    href={`mailto:${director.email}`}
+                    className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white transition-colors group mt-auto"
+                    aria-label={`Email ${director.name}`}
+                  >
+                    <Mail className="w-4 h-4 text-mtc-red group-hover:text-white transition-colors" aria-hidden="true" />
+                    <span className="font-mono tracking-tight">{director.email}</span>
+                  </a>
                 </motion.div>
               ))}
             </div>
