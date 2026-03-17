@@ -12,14 +12,14 @@ const projects: Project[] = [
     title: "Diagnostic & Imaging Centre",
     description:
       "A purpose-built diagnostic hub delivering MRI, CT, ultrasound, laboratory, and pathology services to both outpatient and referred inpatient populations. MTC's investment supports the introduction of digital radiology infrastructure to underserved regional markets.",
-    image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f3?w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1000&q=80",
     tags: ["Diagnostics", "Imaging", "Technology"],
   },
   {
     title: "Primary Healthcare Network Expansion",
     description:
       "MTC Group is investing in the establishment of a network of primary care clinics across peri-urban communities, offering general practice, preventive care, maternal & child health, and pharmacy services to populations with historically limited healthcare access.",
-    image: "https://images.unsplash.com/photo-1666214280577-5b31f8ded68c?w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&q=80",
     tags: ["Primary Care", "Community Health", "Social Impact"],
   },
   {
