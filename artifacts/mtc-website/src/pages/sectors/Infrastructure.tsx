@@ -36,20 +36,6 @@ const projects: Project[] = [
     image: "/media/img6.jpg",
     tags: ["Utility", "Trench Works", "Civil Infrastructure"],
   },
-  {
-    title: "Civil Infrastructure Works – Site Documentation (Video)",
-    description:
-      "Field documentation of MTC Group's civil infrastructure project execution, capturing equipment deployment, crew coordination, and progressive site works across road, bridge, and structural construction projects.",
-    video: "/media/vid7.mp4",
-    tags: ["Video", "Site Operations", "Civil Works"],
-  },
-  {
-    title: "Infrastructure Project Progress (Video)",
-    description:
-      "A video record of progressive civil infrastructure operations across MTC Group's active construction projects. Full HSE oversight and quality assurance protocols maintained throughout all phases.",
-    video: "/media/vid8.mp4",
-    tags: ["Video", "Infrastructure", "HSE"],
-  },
 ];
 
 const capabilities = [
