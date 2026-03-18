@@ -1,0 +1,136 @@
+I need us to correct and restructure the website properly so it reflects the real MTC Group.
+
+The design you created is good, but the content and structure are not aligned with our business model. Right now it looks like an engineering/offshore company, which is not correct.
+
+Please follow these instructions carefully:
+
+----------------------
+
+1. COMPANY POSITIONING (VERY IMPORTANT)
+
+MTC Group is a diversified global company, not just offshore or fabrication.
+
+We operate in:
+- Oil & Gas Trading (MAIN BUSINESS)
+- Refineries & Tank Farms
+- Filling Stations Network
+- Energy & Petroleum Operations
+- Infrastructure Development
+- Real Estate
+- Healthcare
+- Education
+- Agriculture & International Trade (Safwad Limited)
+
+So everything on the website must reflect a GLOBAL ENERGY & INVESTMENT COMPANY.
+
+----------------------
+
+2. HOMEPAGE CORRECTION
+
+Replace current messaging with:
+
+Headline:
+"Powering Global Energy, Trade & Infrastructure"
+
+Subtext:
+"MTC Group of Companies is a diversified international group engaged in oil & gas trading, refinery operations, infrastructure, real estate, healthcare, education, and global commodity trade."
+
+Remove focus on offshore fabrication only.
+
+----------------------
+
+3. REMOVE / REDUCE THIS
+
+- Too much focus on:
+• Offshore fabrication
+• Jacket structures
+• Engineering-only content
+
+Keep some as part of "Infrastructure" or "Projects", but NOT main identity.
+
+----------------------
+
+4. CREATE THESE MAIN SECTIONS
+
+Homepage Sections should be:
+
+- Energy & Petroleum (MOST IMPORTANT)
+- Trading & Commodities (MainKey Limited)
+- Agriculture & Consumer Goods (Safwad Limited)
+- Infrastructure
+- Real Estate
+- Healthcare
+- Education
+- Technology
+
+----------------------
+
+5. ENERGY & PETROLEUM PAGE (PRIORITY)
+
+Add:
+
+- Crude Oil Trading
+- Petroleum Products Supply
+- Refinery Operations
+- Tank Farm Storage
+- Fuel Distribution
+- Global Energy Logistics
+
+This must be the strongest section.
+
+----------------------
+
+6. SUBSIDIARIES PAGE
+
+Create 2 main companies:
+
+MAINKEY LIMITED
+- Energy trading
+- Oil & gas transactions
+
+SAFWAD LIMITED
+- Import & export
+- Agriculture
+- Diapers, pampers, sanitary products
+
+----------------------
+
+7. GLOBAL IMAGE
+
+Remove the idea that we operate only in one region.
+
+Replace with:
+"Africa | Middle East | Europe | Asia"
+
+----------------------
+
+8. CONTENT STYLE
+
+Write everything like:
+
+- Shell
+- ExxonMobil
+- Dangote Group
+
+NOT like a small engineering company.
+
+----------------------
+
+9. VIDEOS & IMAGES
+
+Use:
+- Oil rigs
+- Refineries
+- Tank farms
+- Fuel stations
+- Global trade visuals
+- Agriculture (for Safwad)
+
+----------------------
+
+10. FINAL GOAL
+
+The website must look like:
+A billion-dollar global energy and investment company.
+
+Not a local engineering contractor.

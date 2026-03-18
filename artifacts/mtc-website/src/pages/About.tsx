@@ -15,7 +15,7 @@ export default function About() {
             <h1 className="text-5xl md:text-6xl font-serif text-white font-bold mb-6">About MTC Group</h1>
             <div className="h-1 w-24 bg-mtc-red mx-auto mb-8" />
             <p className="text-xl text-white/80 max-w-2xl mx-auto font-light">
-              Powering Global Trade. Building Sustainable Industries.
+              Powering Global Energy, Trade &amp; Infrastructure.
             </p>
           </motion.div>
         </div>
@@ -33,13 +33,13 @@ export default function About() {
               <h2 className="text-4xl font-serif text-mtc-charcoal font-bold mb-8">Who We Are</h2>
               <div className="space-y-6 text-lg text-mtc-charcoal font-light leading-relaxed">
                 <p>
-                  <strong className="font-bold">MTC Group of Companies</strong> is a diversified international business group engaged in energy trading, petroleum infrastructure, logistics, real estate development, healthcare, education, and technology services.
+                  <strong className="font-bold">MTC Group of Companies</strong> is a global energy and investment group engaged in oil and gas trading, refinery operations, tank farm infrastructure, filling station networks, international commodity trade, real estate, healthcare, education, and technology services.
                 </p>
                 <p>
-                  Through its subsidiaries and strategic partnerships, the group participates in global petroleum supply chains, infrastructure development projects, and industrial investments across multiple regions.
+                  Operating across Africa, the Middle East, Europe, and Asia, MTC Group executes its strategy through two principal subsidiaries: <strong className="font-semibold">MainKey Limited</strong> — our energy and commodity trading arm — and <strong className="font-semibold">Safwad Limited</strong> — our agriculture, import/export, and consumer goods division.
                 </p>
                 <p>
-                  The group's activities span upstream, midstream, and downstream sectors of the energy industry while also supporting infrastructure and economic development in emerging markets.
+                  With over 20 countries of operation, 10,000+ employees worldwide, and a distribution network spanning 2,300+ filling stations, MTC Group is built to the scale and standards of the world's leading integrated energy companies.
                 </p>
               </div>
             </motion.div>
@@ -63,7 +63,7 @@ export default function About() {
                   </li>
                   <li className="flex flex-col border-b border-white/20 pb-3">
                     <span className="text-white/70 text-sm uppercase tracking-wider mb-1">Sectors</span>
-                    <span className="font-semibold">6 core industries</span>
+                    <span className="font-semibold">8 core industries</span>
                   </li>
                   <li className="flex flex-col border-b border-white/20 pb-3">
                     <span className="text-white/70 text-sm uppercase tracking-wider mb-1">Website</span>

@@ -15,6 +15,8 @@ import NotFound from "@/pages/not-found";
 
 // Sector detail pages
 import EnergyPetroleum from "@/pages/sectors/EnergyPetroleum";
+import Trading from "@/pages/sectors/Trading";
+import Agriculture from "@/pages/sectors/Agriculture";
 import Infrastructure from "@/pages/sectors/Infrastructure";
 import RealEstate from "@/pages/sectors/RealEstate";
 import Healthcare from "@/pages/sectors/Healthcare";
@@ -30,6 +32,8 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/sectors" component={Sectors} />
       <Route path="/sectors/energy-petroleum" component={EnergyPetroleum} />
+      <Route path="/sectors/trading" component={Trading} />
+      <Route path="/sectors/agriculture" component={Agriculture} />
       <Route path="/sectors/infrastructure" component={Infrastructure} />
       <Route path="/sectors/real-estate" component={RealEstate} />
       <Route path="/sectors/healthcare" component={Healthcare} />

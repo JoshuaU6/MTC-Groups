@@ -2,50 +2,58 @@ import { SectorDetailLayout, Project } from "@/components/SectorDetailLayout";
 
 const projects: Project[] = [
   {
-    title: "Offshore Jacket Platform Fabrication",
+    title: "Crude Oil Trading & Refinery Offtake",
     description:
-      "MTC Group supported the fabrication and structural preparation of large-scale offshore jacket platforms destined for deepwater installations in the Gulf region. Our teams ensured precision engineering, timely delivery, and full compliance with international offshore standards.",
-    image: "/media/img1.jpg",
-    tags: ["Offshore", "Fabrication", "Gulf Region"],
+      "MTC Group, through MainKey Limited, maintains active crude oil trading operations and offtake agreements with refineries across the MENA region and West Africa. Our team manages complex multi-party transactions covering lifting, logistics, financing, and delivery — serving both sovereign and commercial buyers at scale.",
+    image: "/images/hero1.jpg",
+    tags: ["Crude Oil", "Refinery", "MENA & West Africa"],
   },
   {
-    title: "Subsea Jacket Structure – Loadout Operations",
+    title: "Tank Farm & Petroleum Storage Operations",
     description:
-      "A critical high-tonnage subsea jacket structure was mobilised and prepared for loadout. MTC's operational involvement covered yard management, quality assurance, and coordination with international engineering contractors.",
-    image: "/media/img4.jpg",
-    tags: ["Subsea", "Heavy Lift", "Engineering"],
+      "MTC Group operates and invests in tank farm infrastructure designed for bulk petroleum storage across strategic port and inland locations. Our facilities provide secure, compliant storage for crude oil, PMS, AGO, and LPG — serving trading operations, national petroleum companies, and commercial distributors.",
+    image: "/images/hero2.jpg",
+    tags: ["Tank Farm", "Storage", "Infrastructure"],
   },
   {
-    title: "Platform Construction – Team Delivery",
+    title: "Filling Station Network — 2,300+ Stations",
     description:
-      "Skilled teams deployed by MTC Group completed a major offshore platform construction milestone, delivering on schedule under challenging environmental conditions. This project showcased MTC's workforce management and HSE excellence.",
-    image: "/media/img5.jpg",
-    tags: ["Construction", "Workforce", "HSE"],
+      "MTC Group's fuel distribution network includes supply operations to over 2,300 filling stations across our territories. This downstream presence ensures our petroleum products reach end consumers efficiently — supporting retail fuel distribution, price stability, and energy access across communities.",
+    image: "/images/hero3.jpg",
+    tags: ["Fuel Distribution", "Retail", "Downstream"],
   },
   {
-    title: "Petroleum Infrastructure – Site Operations (Video)",
+    title: "Petroleum Infrastructure – Field Operations (Video)",
     description:
-      "Field operations video documenting active petroleum infrastructure works, including equipment mobilisation, site preparation, and progress milestones.",
+      "Field documentation of active petroleum infrastructure works, including equipment mobilisation, storage facility commissioning, and operational readiness milestones at MTC Group's energy sites.",
     video: "/media/vid1.mp4",
-    tags: ["Petroleum", "Field Operations", "Documentary"],
+    tags: ["Petroleum", "Infrastructure", "Operations"],
   },
   {
-    title: "Energy Project Works – Progress Documentation (Video)",
+    title: "Energy Project Progress – Site Documentation (Video)",
     description:
-      "A recorded progress documentation for energy sector projects undertaken by MTC Group's subsidiary teams, highlighting commissioning readiness and technical execution quality.",
+      "Progress documentation covering energy sector project execution by MTC Group's operational teams, highlighting refinery support activities, tank farm commissioning, and technical delivery milestones.",
     video: "/media/vid2.mp4",
-    tags: ["Energy", "Commissioning", "Progress"],
+    tags: ["Energy", "Commissioning", "Projects"],
+  },
+  {
+    title: "MTC Gulf Bay Refinery — Flagship Facility",
+    description:
+      "MTC Group's Gulf Bay Refinery represents a landmark investment in large-scale, efficient petroleum processing. The facility is designed to handle significant throughput of crude oil, producing refined petroleum products for both domestic distribution and export to regional markets.",
+    image: "/images/hero4.jpg",
+    tags: ["Refinery", "Processing", "USA"],
   },
 ];
 
 const capabilities = [
-  "Offshore platform fabrication & jacket structural works",
-  "Petroleum infrastructure project management",
-  "HSE-compliant field operations",
-  "Engineering procurement & construction (EPC)",
-  "Refinery support services & maintenance",
-  "Crude oil and gas midstream logistics",
-  "Workforce mobilisation for energy sites",
+  "Crude oil trading and international offtake",
+  "Petroleum product supply — PMS, AGO, LNG, LPG, Jet A1",
+  "Refinery operations and participation",
+  "Tank farm development and storage management",
+  "Filling station network supply (2,300+ stations)",
+  "Global fuel distribution and logistics",
+  "Midstream and downstream energy operations",
+  "Energy infrastructure project investment",
 ];
 
 export default function EnergyPetroleum() {
@@ -53,9 +61,9 @@ export default function EnergyPetroleum() {
     <SectorDetailLayout
       sectorName="Energy & Petroleum"
       sectorSlug="energy-petroleum"
-      tagline="Powering growth through strategic investments in oil, gas, and offshore energy infrastructure across the MENA region."
-      overview="MTC Group's Energy & Petroleum division is at the forefront of upstream and midstream operations in the MENA region. Through its subsidiaries and strategic partnerships, MTC delivers end-to-end solutions encompassing offshore platform fabrication, petroleum infrastructure development, refinery support, and field operations management. With a workforce of seasoned engineers and project managers, MTC brings operational discipline and technical excellence to every energy engagement — from deepwater jacket structures to onshore crude handling facilities."
-      heroImage="/media/img1.jpg"
+      tagline="MTC Group's core business — crude oil trading, refinery operations, tank farm infrastructure, and global fuel distribution across Africa, the Middle East, and beyond."
+      overview="Energy and Petroleum is the foundation of MTC Group's global business. Our operations span the full value chain: from crude oil trading and international offtake agreements through refinery participation and tank farm infrastructure, to downstream fuel distribution serving over 2,300 filling stations across our territories. Through MainKey Limited, we engage in large-volume petroleum product trading — supplying PMS, AGO, LNG, LPG, and Jet A1 to sovereign buyers, commercial operators, and fuel networks across Africa, the Middle East, Europe, and Asia. Our infrastructure portfolio includes petroleum storage terminals, refinery support facilities, and our flagship Gulf Bay Refinery — a major investment in clean and efficient petroleum processing. MTC Group's energy operations are designed to the standards of the world's leading integrated energy companies: disciplined, scalable, and globally connected."
+      heroImage="/images/hero1.jpg"
       projects={projects}
       capabilities={capabilities}
     />

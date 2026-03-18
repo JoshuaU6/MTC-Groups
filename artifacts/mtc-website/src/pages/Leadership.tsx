@@ -7,25 +7,25 @@ const DIRECTORS = [
     name: "Engr. Ahmed Bello",
     role: "Director of Energy & Trading",
     email: "energy@mtc-groups.com",
-    desc: "Overseeing energy trading operations and petroleum supply activities through MainKey Limited."
+    desc: "Overseeing crude oil trading, petroleum product supply, and energy transaction operations through MainKey Limited."
   },
   {
     name: "Jean-Luc Fournier",
     role: "Director of International Trade",
     email: "trade@mtc-groups.com",
-    desc: "Overseeing import and export activities, agricultural commodities trading, and product distribution through Safwad Limited."
+    desc: "Leading import and export operations, agricultural commodities trading, and consumer goods distribution through Safwad Limited."
   },
   {
     name: "Engr. David Okonkwo",
     role: "Director of Infrastructure",
     email: "infrastructure@mtc-groups.com",
-    desc: "Responsible for infrastructure development, pipeline construction, and real estate investment initiatives."
+    desc: "Responsible for tank farm development, petroleum storage infrastructure, pipeline projects, and real estate investment initiatives."
   },
   {
     name: "Arch. L. Abubakar",
     role: "Director of Finance",
     email: "finance@mtc-groups.com",
-    desc: "Overseeing financial management, investment strategies, and corporate financial planning."
+    desc: "Overseeing corporate financial management, investment structuring, and strategic financial planning across all group divisions."
   }
 ];
 
@@ -41,7 +41,7 @@ export default function Leadership() {
             <h1 className="text-5xl md:text-6xl font-serif text-white font-bold mb-6">Leadership & Governance</h1>
             <div className="h-1 w-24 bg-mtc-red mx-auto mb-8" />
             <p className="text-xl text-white/70 max-w-2xl mx-auto font-light">
-              Guiding vision and strategic direction for sustainable growth.
+              Guiding vision and strategic direction for sustainable global growth.
             </p>
           </motion.div>
         </div>
@@ -49,7 +49,7 @@ export default function Leadership() {
 
       <section className="py-24 bg-mtc-charcoal text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Chairman Feature Block */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -73,10 +73,26 @@ export default function Leadership() {
               <div className="flex-grow">
                 <h2 className="text-5xl font-serif font-bold text-white mb-2">A.S. Abba</h2>
                 <p className="text-mtc-gold font-bold tracking-widest uppercase text-sm mb-8">Chairman, MTC Group of Companies</p>
-                <p className="text-lg md:text-xl text-white/80 leading-relaxed font-light mb-10 max-w-4xl">
-                  "A.S. Abba serves as the Chairman of MTC Group of Companies, a diversified business group engaged in energy trading, international commerce, agriculture, real estate development, healthcare, education, and technology services. As Chairman, he provides strategic leadership and oversight for the group's operations and long-term growth initiatives across multiple sectors. His vision for MTC Group is to establish a globally recognised business platform that connects international markets through strategic partnerships, responsible investments, and innovative solutions."
-                </p>
-                <div className="w-full max-w-md h-px bg-mtc-gold/50" />
+
+                <div className="space-y-5 text-lg text-white/80 leading-relaxed font-light mb-10 max-w-4xl">
+                  <p>
+                    At MTC Group of Companies, our vision is to build a global enterprise that connects energy, infrastructure, and international trade across strategic markets. We are committed to delivering excellence through our operations in oil and gas trading, refinery development, infrastructure projects, and global investment initiatives.
+                  </p>
+                  <p>
+                    Through our subsidiaries — MainKey Limited and Safwad Limited — we continue to expand our footprint in energy markets, international trade, agriculture, and consumer goods distribution. Our mission is to contribute to economic development, industrial growth, and global sustainability.
+                  </p>
+                  <p>
+                    As Chairman, I remain focused on strengthening MTC Group as a world-class organisation that operates with integrity, innovation, and lasting global impact.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-6">
+                  <div className="w-full max-w-xs h-px bg-mtc-gold/50" />
+                  <div>
+                    <p className="text-white font-bold text-lg">A.S. Abba</p>
+                    <p className="text-mtc-gold text-sm uppercase tracking-widest">Chairman</p>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -114,14 +130,14 @@ export default function Leadership() {
           </div>
 
           {/* Governance note */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="text-center max-w-4xl mx-auto pt-16 border-t border-white/10"
           >
             <p className="text-white/70 leading-relaxed font-light text-lg">
-              MTC Group of Companies operates with a strong commitment to transparency, responsible management, and strategic partnerships. The leadership team ensures all operations follow sound corporate governance principles while supporting long-term growth and sustainable development.
+              MTC Group of Companies operates with a strong commitment to transparency, responsible management, and strategic partnerships. Our leadership team ensures all group operations adhere to the highest standards of corporate governance while driving long-term growth and sustainable global development.
             </p>
           </motion.div>
 
