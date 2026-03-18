@@ -11,6 +11,9 @@ import Subsidiaries from "@/pages/Subsidiaries";
 import Leadership from "@/pages/Leadership";
 import GlobalPresence from "@/pages/GlobalPresence";
 import Contact from "@/pages/Contact";
+import News from "@/pages/News";
+import Sustainability from "@/pages/Sustainability";
+import Careers from "@/pages/Careers";
 import NotFound from "@/pages/not-found";
 
 // Sector detail pages
@@ -42,6 +45,9 @@ function Router() {
       <Route path="/subsidiaries" component={Subsidiaries} />
       <Route path="/leadership" component={Leadership} />
       <Route path="/global-presence" component={GlobalPresence} />
+      <Route path="/news" component={News} />
+      <Route path="/sustainability" component={Sustainability} />
+      <Route path="/careers" component={Careers} />
       <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>

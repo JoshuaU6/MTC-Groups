@@ -282,6 +282,71 @@ export default function Home() {
         </div>
       </section>
 
+      {/* News & Insights Strip */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <div className="flex flex-col md:flex-row justify-between items-end mb-14">
+              <div>
+                <span className="text-mtc-red font-bold tracking-widest text-sm uppercase mb-3 block">Media & Press</span>
+                <h2 className="text-4xl md:text-5xl font-serif text-mtc-charcoal font-bold mb-4">Latest News &amp; Insights</h2>
+                <div className="w-20 h-1 bg-mtc-red" />
+              </div>
+              <Link href="/news" className="hidden md:flex items-center text-mtc-red font-semibold hover:text-red-800 transition-colors mt-4 md:mt-0">
+                All News &amp; Press <ChevronRight className="w-5 h-5 ml-1" aria-hidden="true" />
+              </Link>
+            </div>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                date: "March 12, 2026",
+                category: "Energy",
+                title: "MTC Group Expands Crude Oil Offtake Portfolio Across West Africa",
+                excerpt: "New long-term offtake agreements reinforce MTC Group's position as a major petroleum supply chain operator.",
+                image: "/images/hero3.jpg",
+              },
+              {
+                date: "February 28, 2026",
+                category: "Infrastructure",
+                title: "Gulf Bay Refinery — Phase II Development Update",
+                excerpt: "Phase I commissioning complete; Phase II expands throughput capacity for domestic and export production.",
+                image: "/images/hero4.jpg",
+              },
+              {
+                date: "January 30, 2026",
+                category: "Sustainability",
+                title: "MTC Group Publishes Inaugural ESG Framework",
+                excerpt: "Our first ESG report outlines environmental, social, and governance commitments across all territories.",
+                image: "/images/hero1.jpg",
+              },
+            ].map((article, i) => (
+              <ScrollReveal key={article.title} delay={i * 100}>
+                <Link href="/news" className="block group">
+                  <div className="overflow-hidden mb-4">
+                    <img
+                      src={article.image}
+                      alt={article.title}
+                      className="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <span className="text-xs font-bold text-mtc-red uppercase tracking-widest">{article.category}</span>
+                  <span className="text-xs text-gray-400 ml-3">{article.date}</span>
+                  <h3 className="text-lg font-serif font-bold text-mtc-charcoal mt-2 mb-2 leading-snug group-hover:text-mtc-red transition-colors">
+                    {article.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm font-light leading-relaxed">{article.excerpt}</p>
+                  <span className="text-mtc-red text-sm font-semibold mt-3 flex items-center">
+                    Read More <ChevronRight className="w-4 h-4 ml-1" />
+                  </span>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 bg-mtc-charcoal diagonal-pattern relative">
         <ScrollReveal className="max-w-4xl mx-auto px-4 text-center relative z-10">

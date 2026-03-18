@@ -1,19 +1,50 @@
-import { ReactNode, useState, useEffect } from "react";
+import { ReactNode, useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, MapPin, Mail, Phone, Linkedin, Twitter, Facebook, ChevronRight } from "lucide-react";
+import {
+  Menu, X, MapPin, Mail, Phone, Linkedin, Twitter, Facebook,
+  ChevronRight, ChevronDown, Search, Flame, TrendingUp, Wheat,
+  Warehouse, Building2, HeartPulse, GraduationCap, Cpu, Leaf, Newspaper, Briefcase
+} from "lucide-react";
+import { SearchModal } from "@/components/SearchModal";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
-const NAV_LINKS = [
+const SECTOR_ITEMS = [
+  { name: "Energy & Petroleum", href: "/sectors/energy-petroleum", icon: Flame },
+  { name: "Trading & Commodities", href: "/sectors/trading", icon: TrendingUp },
+  { name: "Agriculture & Consumer Goods", href: "/sectors/agriculture", icon: Wheat },
+  { name: "Infrastructure", href: "/sectors/infrastructure", icon: Warehouse },
+  { name: "Real Estate", href: "/sectors/real-estate", icon: Building2 },
+  { name: "Healthcare", href: "/sectors/healthcare", icon: HeartPulse },
+  { name: "Education", href: "/sectors/education", icon: GraduationCap },
+  { name: "Technology", href: "/sectors/technology", icon: Cpu },
+];
+
+const PRIMARY_NAV = [
+  { name: "About", href: "/about" },
+  { name: "Sectors", href: "/sectors", hasDropdown: true },
+  { name: "Subsidiaries", href: "/subsidiaries" },
+  { name: "Leadership", href: "/leadership" },
+  { name: "Sustainability", href: "/sustainability", icon: Leaf },
+  { name: "News", href: "/news", icon: Newspaper },
+  { name: "Careers", href: "/careers", icon: Briefcase },
+  { name: "Contact", href: "/contact" },
+];
+
+const MOBILE_NAV = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Sectors", href: "/sectors" },
+  ...SECTOR_ITEMS.map((s) => ({ name: `  · ${s.name}`, href: s.href })),
   { name: "Subsidiaries", href: "/subsidiaries" },
   { name: "Leadership", href: "/leadership" },
   { name: "Global Presence", href: "/global-presence" },
+  { name: "Sustainability", href: "/sustainability" },
+  { name: "News", href: "/news" },
+  { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -21,189 +52,251 @@ export function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSectorsDropdownOpen, setIsSectorsDropdownOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const sectorsDropdownRef = useRef<HTMLDivElement>(null);
 
   const isHomePage = location === "/";
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setIsSectorsDropdownOpen(false);
     window.scrollTo(0, 0);
   }, [location]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [isMobileMenuOpen]);
 
-  const isDarkNav = isHomePage && !isScrolled;
-  const navClass = isDarkNav
-    ? "bg-transparent py-6"
-    : "bg-white shadow-md py-4";
-  const linkColor = isDarkNav ? "text-white hover:text-white" : "text-mtc-charcoal hover:text-mtc-red";
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (sectorsDropdownRef.current && !sectorsDropdownRef.current.contains(e.target as Node)) {
+        setIsSectorsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
+  const isDarkNav = isHomePage && !isScrolled;
+  const navBg = isDarkNav ? "bg-transparent py-5" : "bg-white shadow-md py-3";
+  const linkColor = isDarkNav ? "text-white/90 hover:text-white" : "text-mtc-charcoal hover:text-mtc-red";
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-mtc-charcoal">
+
       {/* Top Bar */}
       <div className="hidden lg:flex justify-between items-center px-8 py-2 bg-mtc-charcoal text-white/70 text-xs">
         <div className="flex space-x-6">
           <span className="flex items-center">
-            <MapPin className="w-3 h-3 mr-2 text-mtc-red" aria-hidden="true" />
+            <MapPin className="w-3 h-3 mr-2 text-mtc-red" />
             Headquarters: Washington DC, USA
           </span>
           <span className="flex items-center">
-            <Phone className="w-3 h-3 mr-2 text-mtc-red" aria-hidden="true" />
+            <Phone className="w-3 h-3 mr-2 text-mtc-red" />
             Global: +1 771 240 1273
           </span>
         </div>
-        <span className="flex items-center">
-          <Mail className="w-3 h-3 mr-2 text-mtc-red" aria-hidden="true" />
-          info@mtc-groups.com
-        </span>
+        <div className="flex items-center gap-6">
+          <Link href="/sustainability" className="hover:text-white transition-colors flex items-center gap-1">
+            <Leaf className="w-3 h-3 text-green-400" /> Sustainability
+          </Link>
+          <Link href="/news" className="hover:text-white transition-colors">News</Link>
+          <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
+          <span className="flex items-center">
+            <Mail className="w-3 h-3 mr-2 text-mtc-red" />
+            info@mtc-groups.com
+          </span>
+        </div>
       </div>
 
       {/* Main Navigation */}
       <header
-        className={`fixed w-full z-50 transition-all duration-300 ${navClass} ${isHomePage && !isScrolled ? 'top-0 lg:top-[33px]' : 'top-0'}`}
+        className={`fixed w-full z-50 transition-all duration-300 ${navBg} ${isHomePage && !isScrolled ? 'top-0 lg:top-[33px]' : 'top-0'}`}
         role="banner"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
-            {/* Logo */}
-            <Link href="/" aria-label="MTC Group of Companies — Home">
+            <Link href="/" aria-label="MTC Group — Home">
               <img
                 src={`${import.meta.env.BASE_URL}images/mtc-logo.png`}
                 alt="MTC Group of Companies logo"
-                className="h-16 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden xl:flex items-center space-x-2" aria-label="Main navigation">
-              {NAV_LINKS.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={`px-4 py-2 text-sm font-medium transition-colors relative ${linkColor}`}
-                  aria-current={location === link.href ? "page" : undefined}
-                >
-                  {link.name}
-                  {location === link.href && (
-                    <motion.div
-                      layoutId="nav-indicator"
-                      className="absolute bottom-0 left-0 w-full h-[2px] bg-mtc-red"
-                      initial={false}
-                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                    />
-                  )}
-                </Link>
-              ))}
-              <Link href="/contact" className="ml-4">
-                <button
-                  className="bg-mtc-red text-white hover:bg-red-800 transition-colors rounded px-5 py-2 text-sm font-medium"
-                  aria-label="Partner with MTC Group — Contact us"
-                >
+            <nav className="hidden xl:flex items-center gap-1" aria-label="Main navigation">
+              {PRIMARY_NAV.map((link) => {
+                if (link.hasDropdown) {
+                  return (
+                    <div key={link.name} className="relative" ref={sectorsDropdownRef}>
+                      <button
+                        className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors relative ${linkColor}`}
+                        onClick={() => setIsSectorsDropdownOpen(!isSectorsDropdownOpen)}
+                        aria-expanded={isSectorsDropdownOpen}
+                        aria-haspopup="true"
+                      >
+                        {link.name}
+                        <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isSectorsDropdownOpen ? 'rotate-180' : ''}`} />
+                        {(location === link.href || location.startsWith("/sectors/")) && (
+                          <motion.div
+                            layoutId="nav-indicator"
+                            className="absolute bottom-0 left-0 w-full h-[2px] bg-mtc-red"
+                            initial={false}
+                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                          />
+                        )}
+                      </button>
+
+                      <AnimatePresence>
+                        {isSectorsDropdownOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 8 }}
+                            transition={{ duration: 0.18 }}
+                            className="absolute top-full left-0 mt-2 w-64 bg-white shadow-2xl border-t-4 border-mtc-red z-50"
+                          >
+                            <div className="py-2">
+                              <Link
+                                href="/sectors"
+                                className="block px-5 py-3 text-xs font-bold uppercase tracking-widest text-mtc-red hover:bg-mtc-grey border-b border-gray-100"
+                                onClick={() => setIsSectorsDropdownOpen(false)}
+                              >
+                                View All Sectors →
+                              </Link>
+                              {SECTOR_ITEMS.map((sector) => {
+                                const Icon = sector.icon;
+                                return (
+                                  <Link
+                                    key={sector.name}
+                                    href={sector.href}
+                                    onClick={() => setIsSectorsDropdownOpen(false)}
+                                    className="flex items-center gap-3 px-5 py-3 text-sm text-mtc-charcoal hover:bg-mtc-grey hover:text-mtc-red transition-colors group"
+                                  >
+                                    <Icon className="w-4 h-4 text-mtc-red opacity-70 group-hover:opacity-100 flex-shrink-0" />
+                                    {sector.name}
+                                  </Link>
+                                );
+                              })}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className={`px-3 py-2 text-sm font-medium transition-colors relative ${linkColor}`}
+                    aria-current={location === link.href ? "page" : undefined}
+                  >
+                    {link.name}
+                    {location === link.href && (
+                      <motion.div
+                        layoutId="nav-indicator"
+                        className="absolute bottom-0 left-0 w-full h-[2px] bg-mtc-red"
+                        initial={false}
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                  </Link>
+                );
+              })}
+
+              {/* Search button */}
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className={`p-2 ml-1 transition-colors ${linkColor}`}
+                aria-label="Search site"
+              >
+                <Search className="w-4.5 h-4.5" />
+              </button>
+
+              <Link href="/contact" className="ml-2">
+                <button className="bg-mtc-red text-white hover:bg-red-800 transition-colors rounded px-5 py-2 text-sm font-semibold">
                   Partner With Us
                 </button>
               </Link>
             </nav>
 
-            {/* Mobile Menu Toggle */}
-            <button
-              className={`xl:hidden p-2 focus:outline-none rounded ${isDarkNav ? 'text-white' : 'text-mtc-charcoal'}`}
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-              aria-expanded={isMobileMenuOpen}
-              aria-controls="mobile-nav"
-            >
-              {isMobileMenuOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
-            </button>
+            {/* Mobile: search + hamburger */}
+            <div className="xl:hidden flex items-center gap-2">
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                className={`p-2 ${isDarkNav ? 'text-white' : 'text-mtc-charcoal'}`}
+                aria-label="Search"
+              >
+                <Search className="w-5 h-5" />
+              </button>
+              <button
+                className={`p-2 ${isDarkNav ? 'text-white' : 'text-mtc-charcoal'}`}
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isMobileMenuOpen}
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile Navigation — slides in from the right */}
+      {/* Mobile Drawer */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* Backdrop */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.25 }}
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/50 z-40 xl:hidden"
               onClick={closeMobileMenu}
-              aria-hidden="true"
             />
-
-            {/* Drawer */}
             <motion.nav
               id="mobile-nav"
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
+              initial={{ x: "100%" }} animate={{ x: 0 }} exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
               className="fixed top-0 right-0 h-full w-72 bg-white shadow-2xl z-50 xl:hidden flex flex-col"
-              aria-label="Mobile navigation"
             >
-              {/* Drawer header */}
               <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
-                <img
-                  src={`${import.meta.env.BASE_URL}images/mtc-logo.png`}
-                  alt="MTC Group of Companies logo"
-                  className="h-10 w-auto object-contain"
-                  style={{ filter: 'none' }}
-                />
-                <button
-                  onClick={closeMobileMenu}
-                  className="p-2 text-mtc-charcoal focus:outline-none rounded"
-                  aria-label="Close navigation menu"
-                >
-                  <X className="w-5 h-5" aria-hidden="true" />
+                <img src={`${import.meta.env.BASE_URL}images/mtc-logo.png`} alt="MTC Group" className="h-10 w-auto object-contain" />
+                <button onClick={closeMobileMenu} className="p-2 text-mtc-charcoal">
+                  <X className="w-5 h-5" />
                 </button>
               </div>
-
-              {/* Links */}
-              <div className="flex flex-col py-4 px-6 space-y-1 flex-grow overflow-y-auto">
-                {NAV_LINKS.map((link) => (
+              <div className="flex flex-col py-4 px-6 space-y-0.5 flex-grow overflow-y-auto">
+                {MOBILE_NAV.map((link) => (
                   <Link
-                    key={link.name}
+                    key={link.href + link.name}
                     href={link.href}
                     onClick={closeMobileMenu}
-                    className={`text-base py-3 border-b border-gray-100 flex justify-between items-center transition-colors ${
-                      location === link.href
+                    className={`text-sm py-2.5 border-b border-gray-100 flex justify-between items-center transition-colors ${
+                      link.name.startsWith("  ·")
+                        ? "pl-4 text-gray-500 hover:text-mtc-red border-0 py-1.5"
+                        : location === link.href
                         ? "text-mtc-red font-semibold"
                         : "text-mtc-charcoal hover:text-mtc-red"
                     }`}
-                    aria-current={location === link.href ? "page" : undefined}
                   >
-                    {link.name}
-                    <ChevronRight className="w-4 h-4 opacity-40" aria-hidden="true" />
+                    {link.name.startsWith("  ·") ? link.name.replace("  · ", "· ") : link.name}
+                    {!link.name.startsWith("  ·") && <ChevronRight className="w-4 h-4 opacity-40" />}
                   </Link>
                 ))}
               </div>
-
-              {/* CTA at bottom of drawer */}
               <div className="px-6 py-6 border-t border-gray-100">
                 <Link href="/contact" onClick={closeMobileMenu}>
-                  <button
-                    className="w-full bg-mtc-red text-white rounded px-5 py-3 text-base font-medium text-center hover:bg-red-800 transition-colors"
-                    aria-label="Partner with MTC Group — Contact us"
-                  >
+                  <button className="w-full bg-mtc-red text-white rounded px-5 py-3 text-base font-medium hover:bg-red-800 transition-colors">
                     Partner With Us
                   </button>
                 </Link>
@@ -213,6 +306,9 @@ export function Layout({ children }: LayoutProps) {
         )}
       </AnimatePresence>
 
+      {/* Search Modal */}
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+
       {/* Main Content */}
       <main className="flex-grow flex flex-col" id="main-content">
         {children}
@@ -221,108 +317,138 @@ export function Layout({ children }: LayoutProps) {
       {/* Footer */}
       <footer className="bg-mtc-charcoal pt-16" aria-label="Site footer">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
 
             {/* Col 1 — Brand */}
-            <div className="space-y-6">
-              <Link href="/" className="inline-block" aria-label="MTC Group of Companies — Home">
+            <div className="lg:col-span-1 space-y-5">
+              <Link href="/">
                 <img
                   src={`${import.meta.env.BASE_URL}images/mtc-logo.png`}
                   alt="MTC Group of Companies logo"
-                  className="h-40 w-auto object-contain"
+                  className="h-32 w-auto object-contain"
                 />
               </Link>
-              <p className="text-white/70 text-sm leading-relaxed pr-4">
-                Powering Global Trade. Building Sustainable Industries.
+              <p className="text-white/60 text-sm leading-relaxed">
+                A global energy and investment group operating across Africa, the Middle East, Europe, and Asia.
               </p>
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-mtc-red transition-colors"
-                  aria-label="MTC Group on LinkedIn"
-                >
-                  <Linkedin className="w-4 h-4" aria-hidden="true" />
+              <div className="flex space-x-3">
+                <a href="#" aria-label="LinkedIn" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-mtc-red transition-colors">
+                  <Linkedin className="w-4 h-4" />
                 </a>
-                <a
-                  href="#"
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-mtc-red transition-colors"
-                  aria-label="MTC Group on Twitter / X"
-                >
-                  <Twitter className="w-4 h-4" aria-hidden="true" />
+                <a href="#" aria-label="Twitter / X" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-mtc-red transition-colors">
+                  <Twitter className="w-4 h-4" />
                 </a>
-                <a
-                  href="#"
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-mtc-red transition-colors"
-                  aria-label="MTC Group on Facebook"
-                >
-                  <Facebook className="w-4 h-4" aria-hidden="true" />
+                <a href="#" aria-label="Facebook" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-mtc-red transition-colors">
+                  <Facebook className="w-4 h-4" />
                 </a>
               </div>
             </div>
 
-            {/* Col 2 — Quick Links */}
+            {/* Col 2 — Company */}
             <div>
-              <h4 className="text-mtc-gold font-serif text-lg mb-6">Quick Links</h4>
-              <ul className="space-y-3" role="list">
-                {NAV_LINKS.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-white/70 hover:text-white text-sm transition-colors flex items-center group"
-                    >
-                      <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
-                      {link.name}
+              <h4 className="text-mtc-gold font-serif text-base mb-5 uppercase tracking-wider">Company</h4>
+              <ul className="space-y-3">
+                {[
+                  { name: "About MTC Group", href: "/about" },
+                  { name: "Leadership", href: "/leadership" },
+                  { name: "Subsidiaries", href: "/subsidiaries" },
+                  { name: "Global Presence", href: "/global-presence" },
+                  { name: "Sustainability", href: "/sustainability" },
+                  { name: "News & Insights", href: "/news" },
+                  { name: "Careers", href: "/careers" },
+                ].map((l) => (
+                  <li key={l.name}>
+                    <Link href={l.href} className="text-white/60 hover:text-white text-sm transition-colors flex items-center group">
+                      <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {l.name}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Col 3 — Our Companies */}
+            {/* Col 3 — Sectors */}
             <div>
-              <h4 className="text-mtc-gold font-serif text-lg mb-6">Our Companies</h4>
-              <ul className="space-y-3" role="list">
+              <h4 className="text-mtc-gold font-serif text-base mb-5 uppercase tracking-wider">Our Sectors</h4>
+              <ul className="space-y-3">
+                {SECTOR_ITEMS.map((s) => (
+                  <li key={s.name}>
+                    <Link href={s.href} className="text-white/60 hover:text-white text-sm transition-colors flex items-center group">
+                      <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-0 group-hover:opacity-100 transition-opacity" />
+                      {s.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Col 4 — Our Companies */}
+            <div>
+              <h4 className="text-mtc-gold font-serif text-base mb-5 uppercase tracking-wider">Our Companies</h4>
+              <ul className="space-y-3 mb-8">
                 <li>
-                  <Link href="/subsidiaries" className="text-white/70 hover:text-white text-sm transition-colors flex items-center group">
-                    <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                  <Link href="/subsidiaries" className="text-white/60 hover:text-white text-sm transition-colors flex items-center group">
+                    <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-0 group-hover:opacity-100 transition-opacity" />
                     MainKey Limited
                   </Link>
                 </li>
                 <li>
-                  <Link href="/subsidiaries" className="text-white/70 hover:text-white text-sm transition-colors flex items-center group">
-                    <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true" />
+                  <Link href="/subsidiaries" className="text-white/60 hover:text-white text-sm transition-colors flex items-center group">
+                    <ChevronRight className="w-3 h-3 mr-2 text-mtc-gold opacity-0 group-hover:opacity-100 transition-opacity" />
                     Safwad Limited
                   </Link>
                 </li>
               </ul>
-            </div>
-
-            {/* Col 4 — Contact */}
-            <div>
-              <h4 className="text-mtc-gold font-serif text-lg mb-6">Contact</h4>
-              <ul className="space-y-4" role="list">
-                <li className="flex items-center text-sm text-white/70">
-                  <Mail className="w-4 h-4 mr-3 text-mtc-red shrink-0" aria-hidden="true" />
-                  <span>info@mtc-groups.com</span>
-                </li>
-                <li className="flex items-center text-sm text-white/70">
-                  <span className="w-4 h-4 mr-3 flex items-center justify-center text-mtc-red font-bold" aria-hidden="true">🌐</span>
-                  <span>www.mtc-groups.com</span>
-                </li>
-                <li className="flex items-center text-sm text-white/70">
-                  <Phone className="w-4 h-4 mr-3 text-mtc-red shrink-0" aria-hidden="true" />
-                  <span>+1 771 240 1273</span>
-                </li>
+              <h4 className="text-mtc-gold font-serif text-base mb-5 uppercase tracking-wider">Offices</h4>
+              <ul className="space-y-2 text-sm text-white/60">
+                <li>Washington D.C., USA</li>
+                <li>London, UK</li>
+                <li>Paris, France</li>
+                <li>Lagos, Nigeria</li>
+                <li>Hong Kong</li>
               </ul>
             </div>
+
+            {/* Col 5 — Contact */}
+            <div>
+              <h4 className="text-mtc-gold font-serif text-base mb-5 uppercase tracking-wider">Get In Touch</h4>
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-start text-sm text-white/60">
+                  <Mail className="w-4 h-4 mr-3 text-mtc-red shrink-0 mt-0.5" />
+                  <span>info@mtc-groups.com</span>
+                </li>
+                <li className="flex items-start text-sm text-white/60">
+                  <Phone className="w-4 h-4 mr-3 text-mtc-red shrink-0 mt-0.5" />
+                  <span>+1 771 240 1273</span>
+                </li>
+                <li className="flex items-start text-sm text-white/60">
+                  <MapPin className="w-4 h-4 mr-3 text-mtc-red shrink-0 mt-0.5" />
+                  <span>Washington Business District, DC 20001, USA</span>
+                </li>
+              </ul>
+              <Link href="/contact">
+                <button className="w-full bg-mtc-red text-white text-sm font-semibold py-3 px-4 hover:bg-red-800 transition-colors uppercase tracking-wide">
+                  Contact Us
+                </button>
+              </Link>
+            </div>
+
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-mtc-red">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center text-xs text-white/50">
-            <p>© {new Date().getFullYear()} MTC Group of Companies. All Rights Reserved.</p>
-            <p className="mt-2 md:mt-0">Washington DC, USA &nbsp;|&nbsp; London &nbsp;|&nbsp; Paris &nbsp;|&nbsp; Lagos &nbsp;|&nbsp; Hong Kong</p>
+        <div className="border-t border-white/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-white/40">
+            <p>© {new Date().getFullYear()} MTC Group of Companies. All Rights Reserved. Registered: Washington D.C., USA.</p>
+            <div className="flex items-center gap-4">
+              <Link href="/contact" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <span>|</span>
+              <Link href="/contact" className="hover:text-white transition-colors">Terms of Use</Link>
+              <span>|</span>
+              <Link href="/contact" className="hover:text-white transition-colors">Cookie Policy</Link>
+              <span>|</span>
+              <Link href="/sustainability" className="hover:text-white transition-colors">ESG Report</Link>
+            </div>
           </div>
         </div>
       </footer>
