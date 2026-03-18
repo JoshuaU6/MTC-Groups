@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: "Medical Equipment Procurement & Installation",
     description:
       "MTC Group procures and installs medical equipment across its hospital and clinic network — from surgical theatres and ICU units to laboratory systems and digital radiology. All equipment is sourced from globally recognised medical technology manufacturers to international clinical standards.",
-    image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1000&q=80",
     tags: ["Medical Equipment", "Healthcare Infrastructure"],
   },
 ];
