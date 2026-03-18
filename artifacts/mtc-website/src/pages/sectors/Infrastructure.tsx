@@ -37,32 +37,18 @@ const projects: Project[] = [
     tags: ["Utility", "Trench Works", "Civil Infrastructure"],
   },
   {
-    title: "Infrastructure Works – Site Operations (Video)",
+    title: "Civil Infrastructure Works – Site Documentation (Video)",
     description:
       "Field documentation of MTC Group's civil infrastructure project execution, capturing equipment deployment, crew coordination, and progressive site works across road, bridge, and structural construction projects.",
-    video: "/media/vid3.mp4",
+    video: "/media/vid7.mp4",
     tags: ["Video", "Site Operations", "Civil Works"],
   },
   {
-    title: "Civil Infrastructure – Progressive Works (Video)",
+    title: "Infrastructure Project Progress (Video)",
     description:
       "A video record of progressive civil infrastructure operations across MTC Group's active construction projects. Full HSE oversight and quality assurance protocols maintained throughout all phases.",
-    video: "/media/vid4.mp4",
+    video: "/media/vid8.mp4",
     tags: ["Video", "Infrastructure", "HSE"],
-  },
-  {
-    title: "Structural & Civil Works – Continuous Operations (Video)",
-    description:
-      "Continuous structural and civil works documentation by MTC Group's field infrastructure teams, reflecting project progress, engineering standards, and quality delivery milestones.",
-    video: "/media/vid5.mp4",
-    tags: ["Video", "Structural", "Infrastructure"],
-  },
-  {
-    title: "Heavy Civil Plant – Site Mobilisation (Video)",
-    description:
-      "Site mobilisation documentary showing the full suite of heavy civil plant, equipment, and crew deployment for infrastructure construction projects handled by MTC Group across the MENA region.",
-    video: "/media/vid6.mp4",
-    tags: ["Video", "Mobilisation", "Heavy Civil"],
   },
 ];
 
@@ -83,7 +69,7 @@ export default function Infrastructure() {
       sectorName="Infrastructure"
       sectorSlug="infrastructure"
       tagline="Building the foundations of tomorrow — roads, bridges, civil earthworks, and large-scale structural construction across the region."
-      overview="Infrastructure is MTC Group's established civil engineering and construction domain. Our subsidiaries deliver roads, bridges, structural works, and large-scale civil construction across the MENA region. MTC's field teams combine seasoned engineering expertise with a modern fleet of heavy plant to execute infrastructure projects of any scale and complexity — from national highway corridors and bridge structures to mass earthworks and utility corridor development. Infrastructure at MTC Group refers to civil construction: road networks, bridges, overpass structures, civil earthworks, and heavy structural works. Petroleum processing plants, tank farms, oil facilities, and refinery assets are classified separately under our Energy & Petroleum sector. MTC Group's infrastructure capability serves government programmes, property developers, industrial clients, and national infrastructure authorities across Africa and the Middle East."
+      overview="Infrastructure is MTC Group's established civil engineering and construction domain. Our subsidiaries deliver roads, bridges, structural works, and large-scale civil construction across the MENA region. MTC's field teams combine seasoned engineering expertise with a modern fleet of heavy plant to execute infrastructure projects of any scale and complexity — from national highway corridors and bridge structures to mass earthworks and utility corridor development. Infrastructure at MTC Group refers to civil construction: road networks, bridges, overpass structures, civil earthworks, and heavy structural works. Petroleum processing plants, tank farms, oil facilities, refinery assets, and offshore petroleum infrastructure are classified separately under our Energy & Petroleum sector. MTC Group's infrastructure capability serves government programmes, property developers, industrial clients, and national infrastructure authorities across Africa and the Middle East."
       heroImage="/media/img3.jpg"
       projects={projects}
       capabilities={capabilities}

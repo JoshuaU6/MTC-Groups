@@ -33,10 +33,10 @@ export default function About() {
               <h2 className="text-4xl font-serif text-mtc-charcoal font-bold mb-8">Who We Are</h2>
               <div className="space-y-6 text-lg text-mtc-charcoal font-light leading-relaxed">
                 <p>
-                  <strong className="font-bold">MTC Group of Companies</strong> is a global energy and investment group engaged in oil and gas trading, refinery operations, tank farm infrastructure, filling station networks, international commodity trade, real estate, healthcare, education, and technology services.
+                  <strong className="font-bold">MTC Group of Companies</strong> is a diversified international enterprise engaged in oil &amp; gas trading, refinery operations, tank farm storage, filling station networks, infrastructure, real estate, healthcare, education, technology and global trade through its subsidiaries and strategic operations across Africa, the Middle East, Europe and Asia.
                 </p>
                 <p>
-                  Operating across Africa, the Middle East, Europe, and Asia, MTC Group executes its strategy through two principal subsidiaries: <strong className="font-semibold">MainKey Limited</strong> — our energy and commodity trading arm — and <strong className="font-semibold">Safwad Limited</strong> — our agriculture, import/export, and consumer goods division.
+                  MTC Group executes its strategy through two principal subsidiaries: <strong className="font-semibold">MainKey Limited</strong> — our energy and commodity trading arm — and <strong className="font-semibold">Safwad Limited</strong> — our agriculture, import/export, and consumer goods division.
                 </p>
                 <p>
                   With over 20 countries of operation, 10,000+ employees worldwide, and a distribution network spanning 2,300+ filling stations, MTC Group is built to the scale and standards of the world's leading integrated energy companies.

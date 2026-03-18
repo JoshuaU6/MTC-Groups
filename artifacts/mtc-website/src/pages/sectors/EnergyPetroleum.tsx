@@ -4,7 +4,7 @@ const projects: Project[] = [
   {
     title: "Refinery Operations – Energy & Petroleum",
     description:
-      "This section highlights MTC Group's involvement in refinery operations, petroleum processing, and downstream energy infrastructure supporting large-scale fuel production and global supply. Our refinery assets are positioned to handle significant volumes of crude, producing refined products for domestic and international markets.",
+      "This section highlights MTC Group's involvement in refinery operations, petroleum processing and downstream energy infrastructure supporting large-scale fuel production and global supply. Our refinery assets are positioned to handle significant volumes of crude, producing refined products for domestic and international markets.",
     image: "/images/hero1.jpg",
     tags: ["Refinery", "Petroleum Processing", "Downstream"],
   },
@@ -30,6 +30,27 @@ const projects: Project[] = [
     tags: ["Refinery", "Processing Plant", "USA"],
   },
   {
+    title: "Offshore Energy Infrastructure",
+    description:
+      "MTC Group supports offshore energy infrastructure through fabrication, structural preparation and project delivery for petroleum and offshore installations. This work is part of the group's wider Energy & Petroleum operations.",
+    image: "/media/img4.jpg",
+    tags: ["Offshore", "Energy Infrastructure", "Petroleum"],
+  },
+  {
+    title: "Subsea Energy Structure – Loadout Operations",
+    description:
+      "This section highlights MTC Group's operational support for offshore and subsea energy structures, including mobilisation, loadout coordination and project execution for energy-sector assets.",
+    image: "/media/img5.jpg",
+    tags: ["Subsea", "Offshore", "Loadout Operations"],
+  },
+  {
+    title: "Energy Project Delivery – Workforce Excellence",
+    description:
+      "This section reflects MTC Group's workforce capability in delivering energy and petroleum projects through coordinated site execution, safety discipline and technical operations support.",
+    image: "/media/img9.jpg",
+    tags: ["Workforce", "Energy Projects", "Site Execution"],
+  },
+  {
     title: "Filling Station Network — 2,300+ Stations",
     description:
       "MTC Group's fuel distribution network includes supply operations to over 2,300 filling stations across our territories. This downstream presence ensures our petroleum products reach end consumers efficiently — supporting retail fuel distribution, price stability, and energy access across communities.",
@@ -37,18 +58,46 @@ const projects: Project[] = [
     tags: ["Fuel Distribution", "Retail Network", "Downstream"],
   },
   {
-    title: "Petroleum Infrastructure – Field Operations (Video)",
+    title: "Petroleum Site Operations (Video)",
     description:
-      "Field documentation of active petroleum infrastructure works, including equipment mobilisation, storage facility commissioning, and operational readiness milestones at MTC Group's energy sites.",
+      "Operational footage documenting active petroleum-related works, including equipment mobilisation, site preparation, process support and execution milestones within MTC Group's Energy & Petroleum activities.",
     video: "/media/vid1.mp4",
-    tags: ["Petroleum", "Field Operations", "Commissioning"],
+    tags: ["Petroleum", "Site Operations", "MTC Group"],
   },
   {
-    title: "Energy Project Progress – Site Documentation (Video)",
+    title: "Energy Project Progress – Operations Video",
     description:
-      "Progress documentation covering energy sector project execution by MTC Group's operational teams, highlighting refinery support activities, tank farm commissioning, and technical delivery milestones.",
+      "A progress documentation section showing MTC Group's energy project readiness, commissioning preparation and technical execution across its energy operations.",
     video: "/media/vid2.mp4",
-    tags: ["Energy", "Refinery", "Projects"],
+    tags: ["Energy", "Commissioning", "Operations"],
+  },
+  {
+    title: "Refinery Operations – Energy & Petroleum (Video)",
+    description:
+      "This section highlights MTC Group's involvement in refinery operations, petroleum processing and downstream energy infrastructure supporting large-scale fuel production and global supply.",
+    video: "/media/vid3.mp4",
+    tags: ["Refinery", "Petroleum Processing", "MTC Group"],
+  },
+  {
+    title: "Offshore Petroleum Operations (Video)",
+    description:
+      "This section presents offshore petroleum operations within MTC Group's Energy & Petroleum portfolio, highlighting offshore production support, process infrastructure and marine energy assets.",
+    video: "/media/vid4.mp4",
+    tags: ["Offshore", "Petroleum", "FPSO"],
+  },
+  {
+    title: "Tank Farm Storage Operations (Video)",
+    description:
+      "This section highlights MTC Group's tank farm and fuel storage operations, including storage infrastructure, process support and petroleum logistics within the downstream energy value chain.",
+    video: "/media/vid5.mp4",
+    tags: ["Tank Farm", "Storage", "Petroleum Logistics"],
+  },
+  {
+    title: "Refinery Operations – Petroleum Processing (Video)",
+    description:
+      "This section highlights MTC Group's refinery operations, petroleum processing and downstream energy infrastructure supporting production, storage and supply of petroleum products.",
+    video: "/media/vid6.mp4",
+    tags: ["Refinery", "Processing", "Downstream Energy"],
   },
 ];
 
@@ -57,10 +106,10 @@ const capabilities = [
   "Petroleum product supply — PMS, AGO, LNG, LPG, Jet A1",
   "Refinery operations and participation",
   "Tank farm development and storage management",
-  "Petroleum processing plant investment",
+  "Offshore energy infrastructure and project delivery",
   "Filling station network supply (2,300+ stations)",
-  "Global fuel distribution and logistics",
-  "Midstream and downstream energy operations",
+  "Global fuel distribution and energy logistics",
+  "Upstream, midstream and downstream operations",
 ];
 
 export default function EnergyPetroleum() {
@@ -68,8 +117,8 @@ export default function EnergyPetroleum() {
     <SectorDetailLayout
       sectorName="Energy & Petroleum"
       sectorSlug="energy-petroleum"
-      tagline="MTC Group's core business — refinery operations, petroleum processing, tank farm infrastructure, and global fuel distribution across Africa, the Middle East, and beyond."
-      overview="Energy and Petroleum is the foundation of MTC Group's global business. Our operations span the full value chain: from crude oil trading and international offtake agreements through refinery participation and tank farm infrastructure, to downstream fuel distribution serving over 2,300 filling stations across our territories. Our petroleum assets include refinery operations, processing plants, tank farms, and fuel storage facilities — all classified and managed under the Energy & Petroleum sector. Through MainKey Limited, we engage in large-volume petroleum product trading — supplying PMS, AGO, LNG, LPG, and Jet A1 to sovereign buyers, commercial operators, and fuel networks across Africa, the Middle East, Europe, and Asia. Our flagship Gulf Bay Refinery is a major investment in clean and efficient petroleum processing. MTC Group's energy operations are designed to the standards of the world's leading integrated energy companies: disciplined, scalable, and globally connected."
+      tagline="MTC Group's core business — crude oil trading, petroleum product supply, refinery operations, tank farm storage, fuel distribution and global energy logistics."
+      overview="MTC Group's Energy & Petroleum division operates across crude oil trading, petroleum product supply, refinery operations, tank farm storage, fuel distribution and global energy logistics. Through its subsidiaries and strategic assets, the group supports upstream, midstream and downstream activities across multiple international markets. Our petroleum assets include refinery operations, processing plants, offshore energy infrastructure, tank farms, and fuel storage facilities — all classified and managed under the Energy & Petroleum sector. Through MainKey Limited, we engage in large-volume petroleum product trading — supplying PMS, AGO, LNG, LPG, and Jet A1 to sovereign buyers, commercial operators, and fuel networks across Africa, the Middle East, Europe, and Asia. MTC Group's energy operations are designed to the standards of the world's leading integrated energy companies: disciplined, scalable, and globally connected."
       heroImage="/images/hero1.jpg"
       projects={projects}
       capabilities={capabilities}
