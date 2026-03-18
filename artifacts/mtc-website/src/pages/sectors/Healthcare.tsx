@@ -2,43 +2,43 @@ import { SectorDetailLayout, Project } from "@/components/SectorDetailLayout";
 
 const projects: Project[] = [
   {
-    title: "Regional Specialist Hospital Development",
+    title: "MTC Regional Specialist Hospital",
     description:
-      "MTC Group is partnering in the development of a multi-speciality hospital serving a regional catchment of over two million people. The facility will include cardiology, oncology, orthopaedic, and maternal health units, designed and equipped to international standards.",
-    image: "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=1000&q=80",
-    tags: ["Hospital", "Multi-Speciality", "West Africa"],
+      "MTC Group operates a multi-speciality hospital serving a regional catchment across West Africa. The facility delivers cardiology, oncology, orthopaedic, and maternal health services, built and equipped to international clinical standards.",
+    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1000&q=80",
+    tags: ["Hospital", "Multi-Speciality"],
   },
   {
     title: "Diagnostic & Imaging Centre",
     description:
-      "A purpose-built diagnostic hub delivering MRI, CT, ultrasound, laboratory, and pathology services to both outpatient and referred inpatient populations. MTC's investment supports the introduction of digital radiology infrastructure to underserved regional markets.",
-    image: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1000&q=80",
-    tags: ["Diagnostics", "Imaging", "Technology"],
+      "MTC Group operates a purpose-built diagnostic hub delivering MRI, CT, ultrasound, laboratory, and pathology services. Our diagnostic facilities bring advanced imaging infrastructure to regional healthcare markets, reducing patient referral gaps and improving clinical outcomes.",
+    image: "https://images.unsplash.com/photo-1516069677018-378515003435?w=1000&q=80",
+    tags: ["Diagnostics", "Medical Imaging"],
   },
   {
-    title: "Primary Healthcare Network Expansion",
+    title: "Primary Healthcare Clinic Network",
     description:
-      "MTC Group is investing in the establishment of a network of primary care clinics across peri-urban communities, offering general practice, preventive care, maternal & child health, and pharmacy services to populations with historically limited healthcare access.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&q=80",
-    tags: ["Primary Care", "Community Health", "Social Impact"],
+      "MTC Group operates a network of primary care clinics across peri-urban communities, delivering general practice, preventive care, maternal and child health, and pharmacy services. Our clinic network brings structured healthcare access to populations historically underserved.",
+    image: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1000&q=80",
+    tags: ["Primary Care", "Community Health"],
   },
   {
-    title: "Medical Equipment Supply & Infrastructure",
+    title: "Medical Equipment Supply & Installation",
     description:
-      "Through its procurement arm, MTC Group facilitates the supply and installation of medical equipment to healthcare facilities across the region — from surgical theatres to ICU units — working with globally recognised medical technology manufacturers.",
-    image: "https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=1000&q=80",
-    tags: ["Medical Equipment", "Supply Chain", "Infrastructure"],
+      "MTC Group procures and installs medical equipment across its healthcare facilities and partner hospitals across the region — from surgical theatres and ICU units to laboratory systems — working with globally recognised medical technology manufacturers.",
+    image: "https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=1000&q=80",
+    tags: ["Medical Equipment", "Healthcare Infrastructure"],
   },
 ];
 
 const capabilities = [
-  "Hospital development & project management",
+  "Hospital development & operations management",
   "Medical equipment procurement & installation",
-  "Specialist clinic & diagnostic centre investment",
-  "Primary healthcare network development",
-  "Public-private partnership (PPP) structuring",
-  "Healthcare facility management",
-  "Pharmaceutical supply chain solutions",
+  "Specialist clinic & diagnostic centre operations",
+  "Primary healthcare network management",
+  "Healthcare facility investment & development",
+  "Pharmaceutical supply chain management",
+  "Healthcare workforce training & development",
 ];
 
 export default function Healthcare() {
@@ -46,9 +46,9 @@ export default function Healthcare() {
     <SectorDetailLayout
       sectorName="Healthcare"
       sectorSlug="healthcare"
-      tagline="Investing in the health of communities — developing world-class healthcare facilities, diagnostic centres, and medical supply chains across West Africa."
-      overview="MTC Group recognises healthcare as both a human imperative and a strategic investment opportunity in West Africa's fast-growing economies. Our Healthcare division focuses on developing specialist hospital facilities, diagnostic hubs, and primary care networks that serve populations currently underserved by existing healthcare infrastructure. MTC operates as principal investor and project developer, partnering with international healthcare operators, medical technology providers, and government health agencies to deliver facilities that meet international clinical standards while remaining accessible to local communities. Our investments in healthcare reflect MTC's broader mission to deliver meaningful socioeconomic impact alongside financial returns."
-      heroImage="https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?w=1600&q=80"
+      tagline="Developing and operating world-class healthcare facilities, diagnostic centres, and medical supply networks across Africa."
+      overview="MTC Group's Healthcare division develops, operates, and manages specialist hospital facilities, diagnostic centres, and primary care networks across Africa. Our healthcare infrastructure delivers cardiology, oncology, diagnostics, and community health services to populations across West Africa — built to international clinical standards and managed with operational discipline. MTC Group functions as both developer and operator across its healthcare portfolio, building and managing the facilities, equipment, and workforce capability needed to deliver measurable health outcomes. Our healthcare operations reflect the group's broader commitment to building essential services infrastructure that generates both social impact and long-term investment returns."
+      heroImage="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=80"
       projects={projects}
       capabilities={capabilities}
     />

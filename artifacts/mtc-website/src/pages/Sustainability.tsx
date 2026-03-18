@@ -147,7 +147,7 @@ export default function Sustainability() {
                   MTC supports global energy demand through refinery operations and infrastructure.
                 </p>
                 <p>
-                  We are also investing in educational infrastructure and healthcare that supports the long-term human development of the communities where we operate — because sustainable business and sustainable communities are inseparable.
+                  MTC Group also develops and operates educational institutions and healthcare facilities that support the long-term human development of the communities where we operate — because sustainable business and sustainable communities are inseparable.
                 </p>
               </div>
               <div className="flex items-center gap-3 mt-4">
