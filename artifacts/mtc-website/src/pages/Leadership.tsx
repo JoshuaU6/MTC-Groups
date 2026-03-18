@@ -19,7 +19,7 @@ const DIRECTORS = [
     name: "Engr. David Okonkwo",
     role: "Director of Infrastructure",
     email: "infrastructure@mtc-groups.com",
-    desc: "Responsible for tank farm development, petroleum storage infrastructure, pipeline projects, and real estate investment initiatives."
+    desc: "Responsible for civil infrastructure delivery, road and bridge construction, large-scale earthworks, structural works, and real estate development initiatives."
   },
   {
     name: "Arch. L. Abubakar",

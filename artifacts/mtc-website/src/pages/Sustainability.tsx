@@ -18,7 +18,7 @@ const PILLARS = [
   {
     icon: Users,
     title: "Community Development",
-    desc: "MTC Group invests in the communities surrounding our energy operations — funding education, healthcare, and local economic development programmes across Africa, the Middle East, and our other operational territories.",
+    desc: "MTC Group develops and manages educational institutions, healthcare facilities, and economic infrastructure across communities surrounding its energy operations — across Africa, the Middle East, and other operational territories.",
   },
   {
     icon: ShieldCheck,
@@ -33,7 +33,7 @@ const PILLARS = [
   {
     icon: GraduationCap,
     title: "Education & Workforce Development",
-    desc: "Through our Education division and corporate programmes, MTC Group invests in skills development, vocational training, and workforce capability building across our global energy and infrastructure operations.",
+    desc: "Through its Education division and corporate programmes, MTC Group operates skills development, vocational training, and workforce capability programmes directly aligned with our global energy and infrastructure operations.",
   },
 ];
 
@@ -140,14 +140,14 @@ export default function Sustainability() {
             <ScrollReveal className="lg:w-[50%]" delay={150}>
               <span className="text-mtc-red font-bold tracking-widest text-sm uppercase mb-4 block">Energy Development</span>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-mtc-charcoal mb-6 leading-tight">
-                Supporting Global Energy Development
+                Delivering Global Energy Supply Responsibly
               </h2>
               <div className="space-y-4 text-gray-600 font-light leading-relaxed">
                 <p>
-                  MTC supports global energy demand through refinery operations and infrastructure.
+                  MTC Group delivers global energy supply through refinery operations, petroleum infrastructure, and integrated logistics — with full environmental compliance across every operating environment.
                 </p>
                 <p>
-                  MTC Group also develops and operates educational institutions and healthcare facilities that support the long-term human development of the communities where we operate — because sustainable business and sustainable communities are inseparable.
+                  MTC Group also develops and operates educational institutions and healthcare facilities across the communities where we work — because the long-term strength of our business and the development of the communities around it are inseparable.
                 </p>
               </div>
               <div className="flex items-center gap-3 mt-4">

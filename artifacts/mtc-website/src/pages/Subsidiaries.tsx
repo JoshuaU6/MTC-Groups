@@ -47,10 +47,10 @@ export default function Subsidiaries() {
                   <h2 className="text-4xl font-serif font-bold text-mtc-charcoal leading-tight">MainKey Limited</h2>
                 </div>
                 <p className="text-xl text-gray-600 font-light mb-8 italic">
-                  International energy trading and petroleum supply solutions at global scale.
+                  International energy trading and petroleum supply at global scale.
                 </p>
                 <p className="text-gray-700 font-light leading-relaxed mb-10 max-w-4xl">
-                  MainKey Limited is MTC Group's dedicated energy and commodity trading arm. Operating across international energy markets, MainKey facilitates the purchase, sale, and delivery of petroleum products and industrial commodities to sovereign buyers, commercial operators, and energy distributors in Africa, the Middle East, Europe, and Asia. The company maintains an extensive network of refinery relationships, terminal access agreements, and logistics partnerships to ensure reliable and competitive supply.
+                  MainKey Limited is MTC Group's dedicated energy and commodity trading arm. Operating across international energy markets, MainKey manages the purchase, sale, and delivery of petroleum products and industrial commodities to sovereign buyers, commercial operators, and energy distributors in Africa, the Middle East, Europe, and Asia. The company maintains an extensive network of refinery relationships, terminal access agreements, and logistics infrastructure to deliver reliable and competitive supply.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -122,7 +122,7 @@ export default function Subsidiaries() {
                   Global import, export, and distribution of agricultural and consumer goods.
                 </p>
                 <p className="text-gray-700 font-light leading-relaxed mb-10 max-w-4xl">
-                  Safwad Limited is MTC Group's international trade and consumer goods division. The company specialises in the importation, exportation, and large-scale distribution of agricultural commodities and essential consumer products. Operating across multiple markets, Safwad connects global producers with regional distributors, retailers, and institutional buyers — ensuring efficient supply chains for everyday essential goods.
+                  Safwad Limited is MTC Group's international trade and consumer goods division. The company manages importation, exportation, and large-scale distribution of agricultural commodities and essential consumer products. Operating across multiple markets, Safwad connects global producers with regional distributors, retailers, and institutional buyers — delivering efficient supply chains for everyday essential goods.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">

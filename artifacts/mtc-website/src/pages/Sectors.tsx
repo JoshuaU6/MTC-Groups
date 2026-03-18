@@ -8,7 +8,7 @@ const SECTORS = [
   {
     icon: Flame,
     title: "Energy & Petroleum",
-    desc: "Crude oil trading, petroleum product supply, refinery operations, tank farms, and global fuel distribution networks.",
+    desc: "Crude oil trading, petroleum product supply, refinery operations, tank farm storage, and global fuel distribution networks.",
     href: "/sectors/energy-petroleum",
     tag: "Core Business",
   },
@@ -22,42 +22,42 @@ const SECTORS = [
   {
     icon: Wheat,
     title: "Agriculture & Consumer Goods",
-    desc: "Import, export, and global distribution of agricultural commodities, diapers, sanitary products, and fast-moving consumer goods through Safwad Limited.",
+    desc: "Import, export, and global distribution of agricultural commodities, consumer goods, and sanitary products through Safwad Limited.",
     href: "/sectors/agriculture",
     tag: "Safwad Limited",
   },
   {
     icon: Warehouse,
     title: "Infrastructure",
-    desc: "Tank farms, petroleum storage facilities, industrial infrastructure, pipelines, and large-scale energy logistics projects.",
+    desc: "Roads, bridges, civil earthworks, structural steel construction, and large-scale civil engineering across Africa and the Middle East.",
     href: "/sectors/infrastructure",
-    tag: "Development",
+    tag: "Civil Engineering",
   },
   {
     icon: Building2,
     title: "Real Estate",
-    desc: "Commercial, industrial, and residential developments. Strategic property investments across Africa, the Middle East, and beyond.",
+    desc: "Commercial towers, master-planned residential estates, industrial logistics parks, and hospitality assets developed and managed across West Africa.",
     href: "/sectors/real-estate",
-    tag: "Investment",
+    tag: "Development",
   },
   {
     icon: HeartPulse,
     title: "Healthcare",
-    desc: "Hospital development, diagnostic centres, medical equipment supply, and primary healthcare network investments across West Africa.",
+    desc: "Specialist hospitals, diagnostic centres, primary care clinics, and medical equipment networks owned and operated across West Africa.",
     href: "/sectors/healthcare",
-    tag: "Social Impact",
+    tag: "Social Infrastructure",
   },
   {
     icon: GraduationCap,
     title: "Education",
-    desc: "International schools, vocational training institutes, university-affiliated research centres, and digital learning infrastructure.",
+    desc: "International schools, vocational training institutes, university research centres, and digital learning infrastructure developed and operated by MTC Group.",
     href: "/sectors/education",
-    tag: "Social Impact",
+    tag: "Social Infrastructure",
   },
   {
     icon: Cpu,
     title: "Technology",
-    desc: "Digital infrastructure, IT services, industrial automation, and enterprise technology solutions across MTC Group's operational divisions.",
+    desc: "Industrial IoT, data centre infrastructure, digital oilfield systems, fintech platforms, and enterprise technology deployed across MTC Group operations.",
     href: "/sectors/technology",
     tag: "Innovation",
   },
@@ -76,7 +76,7 @@ export default function Sectors() {
             <h1 className="text-5xl md:text-6xl font-serif text-white font-bold mb-6">Our Sectors</h1>
             <div className="h-1 w-24 bg-mtc-red mx-auto mb-8" />
             <p className="text-xl text-white/80 max-w-3xl mx-auto font-light">
-              MTC Group operates strategically across eight high-impact industries — from crude oil trading and refinery operations to agriculture, real estate, healthcare, and technology.
+              MTC Group owns and operates across eight high-impact industries — from crude oil trading and refinery operations to agriculture, real estate, healthcare, and technology.
             </p>
           </motion.div>
         </div>
