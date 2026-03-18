@@ -7,41 +7,41 @@ import { Link } from "wouter";
 const PILLARS = [
   {
     icon: Sun,
-    title: "Clean Energy Transition",
-    desc: "MTC Group actively supports the transition to cleaner energy by investing in natural gas infrastructure, LNG distribution, and energy efficiency programmes alongside our conventional petroleum operations.",
+    title: "Clean Energy Operations",
+    desc: "MTC Group's sustainability approach begins at the refinery and field level. We implement energy-efficient processes, emissions monitoring, and responsible petroleum operations across all our energy assets to reduce environmental impact.",
   },
   {
     icon: Globe,
     title: "Environmental Responsibility",
-    desc: "Our operations adhere to internationally recognised environmental standards. We monitor emissions, manage waste responsibly, and operate facilities designed to minimise environmental impact.",
+    desc: "Our refinery, petroleum, and infrastructure operations adhere to internationally recognised environmental standards. We monitor emissions, manage waste responsibly, and operate facilities designed to meet global environmental compliance requirements.",
   },
   {
     icon: Users,
     title: "Community Development",
-    desc: "We invest in the communities where we operate — funding education, healthcare, and economic development programmes across Africa and our other operational territories.",
+    desc: "MTC Group invests in the communities surrounding our energy operations — funding education, healthcare, and local economic development programmes across Africa, the Middle East, and our other operational territories.",
   },
   {
     icon: ShieldCheck,
     title: "Corporate Governance",
-    desc: "MTC Group maintains rigorous corporate governance standards, including transparent financial reporting, anti-corruption policies, and independent board oversight across all subsidiaries.",
+    desc: "MTC Group maintains rigorous corporate governance standards across all subsidiaries, including transparent financial reporting, anti-corruption policies, and independent board oversight aligned with international best practice.",
   },
   {
     icon: Heart,
-    title: "Health & Safety",
-    desc: "The safety of our employees, contractors, and communities is non-negotiable. We operate to international HSE standards with zero-tolerance for unsafe practices across all sites.",
+    title: "Health, Safety & HSE",
+    desc: "The safety of our employees, contractors, and communities across all refinery, energy, and infrastructure sites is non-negotiable. We maintain a zero major safety incident policy and operate to international HSE standards across all operations.",
   },
   {
     icon: GraduationCap,
-    title: "Education & Training",
-    desc: "Through our Education division and corporate programmes, MTC Group invests in skills development, vocational training, and graduate employment across our markets.",
+    title: "Education & Workforce Development",
+    desc: "Through our Education division and corporate programmes, MTC Group invests in skills development, vocational training, and workforce capability building across our global energy and infrastructure operations.",
   },
 ];
 
 const COMMITMENTS = [
-  { value: "Zero", label: "Tolerance for Environmental Violations" },
-  { value: "100%", label: "Compliance with Host Nation HSE Laws" },
-  { value: "20+", label: "Community Investment Programmes Active" },
-  { value: "50+", label: "Scholarships Awarded Annually" },
+  { value: "10,000+", label: "Workforce" },
+  { value: "Multi-Country", label: "Compliance" },
+  { value: "Zero", label: "Major Safety Incident Policy" },
+  { value: "50+", label: "Community Projects" },
 ];
 
 export default function Sustainability() {
@@ -59,11 +59,11 @@ export default function Sustainability() {
               <span className="text-green-400 font-bold tracking-widest text-sm uppercase">ESG & Sustainability</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-serif text-white font-bold mb-6">
-              Responsible Energy.<br />Sustainable Growth.
+              Delivering Sustainable Energy<br />at Industrial Scale
             </h1>
             <div className="h-1 w-24 bg-mtc-red mx-auto mb-8" />
             <p className="text-xl text-white/80 max-w-3xl mx-auto font-light">
-              MTC Group is committed to operating responsibly — delivering energy, trade, and infrastructure that benefits people, economies, and the planet.
+              MTC Group integrates sustainability across refinery operations, petroleum infrastructure, and global energy projects.
             </p>
           </motion.div>
         </div>
@@ -79,13 +79,13 @@ export default function Sustainability() {
               </h2>
               <div className="space-y-5 text-gray-600 text-lg font-light leading-relaxed">
                 <p>
-                  At MTC Group, sustainability is not a reporting exercise — it is embedded in how we operate. From the sites we develop to the communities we serve, responsible conduct is a condition of doing business, not an afterthought.
+                  Sustainability is embedded across refinery, oil &amp; gas, and global operations with full ESG compliance.
                 </p>
                 <p>
                   Our ESG framework aligns with internationally recognised standards including the UN Global Compact and the UN Sustainable Development Goals (SDGs). We measure and report our social, environmental, and governance performance as part of our commitment to accountability.
                 </p>
                 <p>
-                  As a group spanning energy, agriculture, infrastructure, healthcare, and education, we recognise the scope of our responsibility — and we accept it. Our operations touch the lives of communities across Africa, the Middle East, Europe, and Asia, and we are committed to making that impact a positive one.
+                  As a group spanning energy, refinery operations, infrastructure, healthcare, and education, we recognise the scope of our responsibility — and we accept it. Our operations touch the lives of communities across Africa, the Middle East, Europe, and Asia, and we are committed to making that impact a positive one.
                 </p>
               </div>
             </ScrollReveal>
@@ -138,13 +138,13 @@ export default function Sustainability() {
               />
             </ScrollReveal>
             <ScrollReveal className="lg:w-[50%]" delay={150}>
-              <span className="text-mtc-red font-bold tracking-widest text-sm uppercase mb-4 block">Energy Transition</span>
+              <span className="text-mtc-red font-bold tracking-widest text-sm uppercase mb-4 block">Energy Development</span>
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-mtc-charcoal mb-6 leading-tight">
-                Supporting Africa's Energy Future
+                Supporting Global Energy Development
               </h2>
               <div className="space-y-4 text-gray-600 font-light leading-relaxed">
                 <p>
-                  MTC Group supports Africa's growing energy needs while pursuing a responsible path toward cleaner energy sources. Our LNG trading and distribution infrastructure plays a key role in helping African nations reduce dependence on solid fuels and access cleaner natural gas.
+                  MTC supports global energy demand through refinery operations and infrastructure.
                 </p>
                 <p>
                   We are also investing in educational infrastructure and healthcare that supports the long-term human development of the communities where we operate — because sustainable business and sustainable communities are inseparable.
