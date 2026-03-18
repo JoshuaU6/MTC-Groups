@@ -137,7 +137,7 @@ export default function Leadership() {
             className="text-center max-w-4xl mx-auto pt-16 border-t border-white/10"
           >
             <p className="text-white/70 leading-relaxed font-light text-lg">
-              MTC Group of Companies operates with a strong commitment to transparency, responsible management, and strategic partnerships. Our leadership team ensures all group operations adhere to the highest standards of corporate governance while driving long-term growth and sustainable global development.
+              MTC Group of Companies operates with an unwavering commitment to transparency, responsible management, and sound corporate governance. Our leadership team holds every division of the group to the highest ethical, financial, and operational standards — maintaining the discipline required to build a world-class global enterprise.
             </p>
           </motion.div>
 

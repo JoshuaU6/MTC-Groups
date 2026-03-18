@@ -164,10 +164,10 @@ export function SectorDetailLayout({
       <section className="py-20 bg-mtc-charcoal">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-white font-bold mb-5">
-            Interested in Partnering with MTC Group?
+            Engage with MTC Group
           </h2>
           <p className="text-white/70 mb-8 text-lg font-light">
-            Reach out to discuss investment opportunities, joint ventures, or project collaborations in the {sectorName} sector.
+            To discuss commercial opportunities or engagements in the {sectorName} sector, contact our team directly.
           </p>
           <Link href="/contact">
             <button className="bg-mtc-red text-white px-8 py-4 text-base font-semibold hover:bg-red-800 transition-colors uppercase tracking-wide">

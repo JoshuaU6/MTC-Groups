@@ -79,13 +79,13 @@ export default function Sustainability() {
               </h2>
               <div className="space-y-5 text-gray-600 text-lg font-light leading-relaxed">
                 <p>
-                  Sustainability is embedded across refinery, oil &amp; gas, and global operations with full ESG compliance.
+                  Sustainability is embedded across every layer of MTC Group's operations — from refinery and petroleum infrastructure to civil construction, healthcare, and education.
                 </p>
                 <p>
-                  Our ESG framework aligns with internationally recognised standards including the UN Global Compact and the UN Sustainable Development Goals (SDGs). We measure and report our social, environmental, and governance performance as part of our commitment to accountability.
+                  Our ESG framework aligns with internationally recognised standards including the UN Global Compact and the UN Sustainable Development Goals. We measure and report social, environmental, and governance performance as part of our commitment to full accountability.
                 </p>
                 <p>
-                  As a group spanning energy, refinery operations, infrastructure, healthcare, and education, we recognise the scope of our responsibility — and we accept it. Our operations touch the lives of communities across Africa, the Middle East, Europe, and Asia, and we are committed to making that impact a positive one.
+                  MTC Group's operations reach communities across Africa, the Middle East, Europe, and Asia. We hold that responsibility fully — and execute against it.
                 </p>
               </div>
             </ScrollReveal>
