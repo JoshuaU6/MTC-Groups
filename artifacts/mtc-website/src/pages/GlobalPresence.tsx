@@ -59,6 +59,15 @@ export default function GlobalPresence() {
             <p className="text-xl text-white/80 max-w-2xl mx-auto font-light">
               Operating across four continents through strategic partnerships and international business networks.
             </p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-white/90 text-lg font-semibold tracking-widest uppercase">
+              <span>Africa</span>
+              <span className="text-mtc-red">|</span>
+              <span>Middle East</span>
+              <span className="text-mtc-red">|</span>
+              <span>Europe</span>
+              <span className="text-mtc-red">|</span>
+              <span>Asia</span>
+            </div>
           </motion.div>
         </div>
       </div>
