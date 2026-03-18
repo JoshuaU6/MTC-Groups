@@ -2,78 +2,78 @@ import { SectorDetailLayout, Project } from "@/components/SectorDetailLayout";
 
 const projects: Project[] = [
   {
-    title: "Large-Diameter Pipeline Lowering – Phase 1",
+    title: "Road Network Development – National Corridor",
     description:
-      "MTC Group's infrastructure teams executed the controlled lowering of a large-diameter steel pipeline into a prepared trench corridor. Utilising side-boom track dozers and precision lifting rigging, the operation was completed within stringent safety parameters.",
+      "MTC Group's civil engineering teams have delivered large-scale road network development projects across the region, including national highway corridors, access roads, and urban road infrastructure. Works include subgrade preparation, pavement construction, drainage systems, and road furniture.",
     image: "/media/img2.jpg",
-    tags: ["Pipeline", "Civil Works", "Heavy Equipment"],
+    tags: ["Roads", "Civil Works", "National Corridor"],
   },
   {
-    title: "Cross-Country Pipeline Installation – Aerial Spread",
+    title: "Bridge & Overpass Construction",
     description:
-      "Spanning several kilometres of open terrain, this pipeline installation project deployed a coordinated spread of side-boom pipe layers. MTC's project management ensured alignment tolerance, anti-corrosion coating integrity, and welding quality throughout the corridor.",
+      "MTC Group's infrastructure division executes complex bridge and overpass construction projects — from design and piling through deck construction and finishing. Our teams manage structural steel and reinforced concrete bridge works across varied terrain and environmental conditions.",
     image: "/media/img3.jpg",
-    tags: ["Pipeline", "Cross-Country", "EPC"],
+    tags: ["Bridge", "Structural", "Civil Engineering"],
   },
   {
-    title: "Trench Pipe Placement – Close-Quarter Operations",
+    title: "Civil Earthworks – Mass Excavation & Grading",
     description:
-      "Close-quarter pipeline placement in a narrow earthwork trench required millimetre-level crane coordination. MTC's site engineering team managed loads, slope angles, and strand jack alignment to ensure safe, accurate pipe setting.",
+      "Large-scale earthworks and mass excavation form a core part of MTC's infrastructure capability. Our plant and equipment fleet supports cut-and-fill operations, site levelling, and terrain preparation for major development projects across the MENA region.",
     image: "/media/img10.jpg",
-    tags: ["Pipeline", "Trench Works", "Precision Engineering"],
+    tags: ["Earthworks", "Excavation", "Terrain"],
   },
   {
-    title: "Multi-Sideboom Pipe Lowering – Long Run",
+    title: "Structural Steel Fabrication & Heavy Lift",
     description:
-      "An extended pipe run was successfully lowered using a fleet of side-boom machines operating in synchronised formation. This project is a testament to MTC's capability in managing complex multi-equipment civil infrastructure operations.",
+      "MTC Group's infrastructure teams deliver structural steel fabrication, erection, and heavy lift operations for bridges, buildings, and industrial structures. We deploy a modern fleet of cranes and lifting equipment, managed by certified rigging engineers.",
     image: "/media/img11.jpg",
-    tags: ["Pipeline", "Long Run", "Fleet Operations"],
+    tags: ["Structural Steel", "Heavy Lift", "Fabrication"],
   },
   {
-    title: "Pipeline Corridor Development – Desert Terrain",
+    title: "Utility Corridor & Civil Trench Works",
     description:
-      "MTC supported pipeline corridor development through challenging arid desert terrain, managing ground preparation, pipe stringing, bending, and lowering-in operations while maintaining strict environmental and HSE compliance.",
+      "MTC supports utility corridor development and civil trench works for water, drainage, and communications infrastructure. Our teams execute trench excavation, bedding, backfill, and reinstatement to the highest engineering specifications.",
     image: "/media/img6.jpg",
-    tags: ["Desert Works", "Terrain Management", "HSE"],
+    tags: ["Utility", "Trench Works", "Civil Infrastructure"],
   },
   {
-    title: "Pipeline Installation – Video Documentation (Field)",
+    title: "Infrastructure Works – Site Operations (Video)",
     description:
-      "Recorded on-site field documentation of large-scale pipeline installation activities, capturing the precision of equipment deployment, pipe handling, and crew coordination.",
+      "Field documentation of MTC Group's civil infrastructure project execution, capturing equipment deployment, crew coordination, and progressive site works across road, bridge, and structural construction projects.",
     video: "/media/vid3.mp4",
-    tags: ["Video", "Field Documentation", "Pipeline"],
+    tags: ["Video", "Site Operations", "Civil Works"],
   },
   {
-    title: "Infrastructure Works – Progressive Spread Operations (Video)",
+    title: "Civil Infrastructure – Progressive Works (Video)",
     description:
-      "A video record of progressive pipeline spread operations, documenting the advancing pipe-laying front across open-country terrain. Full HSE oversight and quality assurance protocols were maintained.",
+      "A video record of progressive civil infrastructure operations across MTC Group's active construction projects. Full HSE oversight and quality assurance protocols maintained throughout all phases.",
     video: "/media/vid4.mp4",
-    tags: ["Video", "Spread Operations", "Infrastructure"],
+    tags: ["Video", "Infrastructure", "HSE"],
   },
   {
-    title: "Pipe Lowering & Welding – Continuous Operations (Video)",
+    title: "Structural & Civil Works – Continuous Operations (Video)",
     description:
-      "This video covers continuous welding, coating, and lowering-in activities managed by MTC's field infrastructure teams, reflecting project progress and engineering standards.",
+      "Continuous structural and civil works documentation by MTC Group's field infrastructure teams, reflecting project progress, engineering standards, and quality delivery milestones.",
     video: "/media/vid5.mp4",
-    tags: ["Video", "Welding", "Infrastructure"],
+    tags: ["Video", "Structural", "Infrastructure"],
   },
   {
-    title: "Heavy Civil Infrastructure – Site Mobilisation (Video)",
+    title: "Heavy Civil Plant – Site Mobilisation (Video)",
     description:
-      "Site mobilisation documentary showing the full suite of heavy civil plant, equipment, and crew deployment for infrastructure projects handled by MTC Group.",
+      "Site mobilisation documentary showing the full suite of heavy civil plant, equipment, and crew deployment for infrastructure construction projects handled by MTC Group across the MENA region.",
     video: "/media/vid6.mp4",
     tags: ["Video", "Mobilisation", "Heavy Civil"],
   },
 ];
 
 const capabilities = [
-  "Large-diameter pipeline construction & installation",
-  "Cross-country corridor development",
-  "Trench excavation, backfill & reinstatement",
+  "Road network design, construction & rehabilitation",
+  "Bridge and overpass engineering & construction",
+  "Civil earthworks — mass excavation, grading & fill",
   "Structural steel fabrication & heavy lifts",
-  "Roads, bridges & civil earthworks",
+  "Utility corridor construction & trench works",
   "Multi-discipline EPC project management",
-  "HSE management systems for heavy civil works",
+  "HSE management systems for civil works",
   "Equipment fleet management & logistics",
 ];
 
@@ -82,8 +82,8 @@ export default function Infrastructure() {
     <SectorDetailLayout
       sectorName="Infrastructure"
       sectorSlug="infrastructure"
-      tagline="Building the foundations of tomorrow — from pipeline corridors and heavy civil works to strategic infrastructure development across the region."
-      overview="Infrastructure is MTC Group's most established operational domain. Our subsidiaries deliver complete pipeline installation, heavy civil engineering, and large-scale construction across the MENA region. From cross-country pipeline spreads to complex trench-laying operations in desert terrain, MTC's field teams combine seasoned engineering expertise with a modern fleet of heavy plant to deliver infrastructure projects of any complexity. Our pipeline division alone has installed hundreds of kilometres of product, fuel, and utility pipelines, serving national oil companies, industrial developers, and government infrastructure programmes."
+      tagline="Building the foundations of tomorrow — roads, bridges, civil earthworks, and large-scale structural construction across the region."
+      overview="Infrastructure is MTC Group's established civil engineering and construction domain. Our subsidiaries deliver roads, bridges, structural works, and large-scale civil construction across the MENA region. MTC's field teams combine seasoned engineering expertise with a modern fleet of heavy plant to execute infrastructure projects of any scale and complexity — from national highway corridors and bridge structures to mass earthworks and utility corridor development. Infrastructure at MTC Group refers to civil construction: road networks, bridges, overpass structures, civil earthworks, and heavy structural works. Petroleum processing plants, tank farms, oil facilities, and refinery assets are classified separately under our Energy & Petroleum sector. MTC Group's infrastructure capability serves government programmes, property developers, industrial clients, and national infrastructure authorities across Africa and the Middle East."
       heroImage="/media/img3.jpg"
       projects={projects}
       capabilities={capabilities}
