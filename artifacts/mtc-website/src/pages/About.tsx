@@ -71,7 +71,7 @@ export default function About() {
                   </li>
                   <li className="flex flex-col">
                     <span className="text-white/70 text-sm uppercase tracking-wider mb-1">Email</span>
-                    <span className="font-semibold">info@mtc-groups.com</span>
+                    <span className="font-semibold">contact@mtc-groups.com</span>
                   </li>
                 </ul>
               </div>

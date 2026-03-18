@@ -14,6 +14,7 @@ import Contact from "@/pages/Contact";
 import News from "@/pages/News";
 import Sustainability from "@/pages/Sustainability";
 import Careers from "@/pages/Careers";
+import Partnerships from "@/pages/Partnerships";
 import NotFound from "@/pages/not-found";
 
 // Sector detail pages
@@ -49,6 +50,7 @@ function Router() {
       <Route path="/sustainability" component={Sustainability} />
       <Route path="/careers" component={Careers} />
       <Route path="/contact" component={Contact} />
+      <Route path="/partnerships" component={Partnerships} />
       <Route component={NotFound} />
     </Switch>
   );

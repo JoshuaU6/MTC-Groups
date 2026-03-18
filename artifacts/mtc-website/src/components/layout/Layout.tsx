@@ -111,10 +111,10 @@ export function Layout({ children }: LayoutProps) {
           </Link>
           <Link href="/news" className="hover:text-white transition-colors">News</Link>
           <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
-          <span className="flex items-center">
+          <a href="mailto:contact@mtc-groups.com" className="flex items-center hover:text-white transition-colors">
             <Mail className="w-3 h-3 mr-2 text-mtc-red" />
-            info@mtc-groups.com
-          </span>
+            contact@mtc-groups.com
+          </a>
         </div>
       </div>
 
@@ -225,7 +225,7 @@ export function Layout({ children }: LayoutProps) {
                 <Search className="w-4.5 h-4.5" />
               </button>
 
-              <Link href="/contact" className="ml-2">
+              <Link href="/partnerships" className="ml-2">
                 <button className="bg-mtc-red text-white hover:bg-red-800 transition-colors rounded px-5 py-2 text-sm font-semibold">
                   Partner With Us
                 </button>
@@ -295,7 +295,7 @@ export function Layout({ children }: LayoutProps) {
                 ))}
               </div>
               <div className="px-6 py-6 border-t border-gray-100">
-                <Link href="/contact" onClick={closeMobileMenu}>
+                <Link href="/partnerships" onClick={closeMobileMenu}>
                   <button className="w-full bg-mtc-red text-white rounded px-5 py-3 text-base font-medium hover:bg-red-800 transition-colors">
                     Partner With Us
                   </button>
@@ -415,7 +415,7 @@ export function Layout({ children }: LayoutProps) {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start text-sm text-white/60">
                   <Mail className="w-4 h-4 mr-3 text-mtc-red shrink-0 mt-0.5" />
-                  <span>info@mtc-groups.com</span>
+                  <a href="mailto:contact@mtc-groups.com" className="hover:text-white transition-colors">contact@mtc-groups.com</a>
                 </li>
                 <li className="flex items-start text-sm text-white/60">
                   <Phone className="w-4 h-4 mr-3 text-mtc-red shrink-0 mt-0.5" />

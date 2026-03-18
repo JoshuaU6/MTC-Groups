@@ -199,10 +199,23 @@ export default function Contact() {
                 
                 <div className="space-y-8 font-light text-lg">
                   <div className="flex items-start border-b border-white/10 pb-6">
-                    <Mail className="w-6 h-6 mr-4 text-mtc-red mt-1" />
+                    <Mail className="w-6 h-6 mr-4 text-mtc-red mt-1 shrink-0" />
                     <div>
-                      <h4 className="font-bold text-white mb-1 uppercase tracking-wider text-sm">Email</h4>
-                      <p className="text-white/80">info@mtc-groups.com</p>
+                      <h4 className="font-bold text-white mb-3 uppercase tracking-wider text-sm">Email</h4>
+                      <div className="space-y-3">
+                        <div>
+                          <p className="text-white/50 text-xs uppercase tracking-wider mb-0.5">Primary Contact</p>
+                          <a href="mailto:contact@mtc-groups.com" className="text-white/80 hover:text-white transition-colors">contact@mtc-groups.com</a>
+                        </div>
+                        <div>
+                          <p className="text-white/50 text-xs uppercase tracking-wider mb-0.5">Business &amp; Partnerships</p>
+                          <a href="mailto:partnerships@mtc-groups.com" className="text-white/80 hover:text-white transition-colors">partnerships@mtc-groups.com</a>
+                        </div>
+                        <div>
+                          <p className="text-white/50 text-xs uppercase tracking-wider mb-0.5">Trading Desk</p>
+                          <a href="mailto:trading@mtc-groups.com" className="text-white/80 hover:text-white transition-colors">trading@mtc-groups.com</a>
+                        </div>
+                      </div>
                     </div>
                   </div>
 
