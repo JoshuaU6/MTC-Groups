@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu, X, MapPin, Mail, Phone, Linkedin, Twitter, Facebook,
   ChevronRight, ChevronDown, Search, Flame, TrendingUp, Wheat,
-  Warehouse, Building2, HeartPulse, GraduationCap, Cpu, Leaf, Newspaper, Briefcase
+  Warehouse, Building2, HeartPulse, GraduationCap, Cpu, Leaf, Newspaper, Briefcase, LogIn
 } from "lucide-react";
 import { SearchModal } from "@/components/SearchModal";
 
@@ -47,6 +47,8 @@ const MOBILE_NAV = [
   { name: "Careers", href: "/careers" },
   { name: "Contact", href: "/contact" },
 ];
+
+const PORTAL_URL = "https://portal.mtc-groups.com";
 
 export function Layout({ children }: LayoutProps) {
   const [location] = useLocation();
@@ -111,6 +113,15 @@ export function Layout({ children }: LayoutProps) {
           </Link>
           <Link href="/news" className="hover:text-white transition-colors">News</Link>
           <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
+          <a
+            href="https://portal.mtc-groups.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-mtc-gold hover:text-white transition-colors font-medium"
+          >
+            <LogIn className="w-3 h-3" />
+            Staff Portal
+          </a>
           <a href="mailto:contact@mtc-groups.com" className="flex items-center hover:text-white transition-colors">
             <Mail className="w-3 h-3 mr-2 text-mtc-red" />
             contact@mtc-groups.com
@@ -225,6 +236,21 @@ export function Layout({ children }: LayoutProps) {
                 <Search className="w-4.5 h-4.5" />
               </button>
 
+              <a
+                href="https://portal.mtc-groups.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-2"
+              >
+                <button className={`flex items-center gap-2 border transition-colors rounded px-4 py-2 text-sm font-semibold ${
+                  isDarkNav
+                    ? "border-white/40 text-white hover:bg-white hover:text-mtc-charcoal"
+                    : "border-mtc-charcoal/30 text-mtc-charcoal hover:bg-mtc-charcoal hover:text-white"
+                }`}>
+                  <LogIn className="w-3.5 h-3.5" />
+                  Staff Portal
+                </button>
+              </a>
               <Link href="/partnerships" className="ml-2">
                 <button className="bg-mtc-red text-white hover:bg-red-800 transition-colors rounded px-5 py-2 text-sm font-semibold">
                   Partner With Us
@@ -294,7 +320,18 @@ export function Layout({ children }: LayoutProps) {
                   </Link>
                 ))}
               </div>
-              <div className="px-6 py-6 border-t border-gray-100">
+              <div className="px-6 py-6 border-t border-gray-100 space-y-3">
+                <a
+                  href="https://portal.mtc-groups.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMobileMenu}
+                >
+                  <button className="w-full flex items-center justify-center gap-2 border-2 border-mtc-charcoal text-mtc-charcoal rounded px-5 py-3 text-base font-medium hover:bg-mtc-charcoal hover:text-white transition-colors">
+                    <LogIn className="w-4 h-4" />
+                    Staff Portal
+                  </button>
+                </a>
                 <Link href="/partnerships" onClick={closeMobileMenu}>
                   <button className="w-full bg-mtc-red text-white rounded px-5 py-3 text-base font-medium hover:bg-red-800 transition-colors">
                     Partner With Us
