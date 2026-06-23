@@ -33,7 +33,7 @@ interface Job {
 
 const FALLBACK_JOBS: Job[] = [
   { id: -1, jobId: "MTC-JOB-2026-0001", title: "Senior Crude Oil Trader", department: "Energy & Trading", division: "Oil & Gas", location: "London, UK", type: "Full-time", level: "Senior", workMode: "On-site", description: "Lead trading operations for crude oil and refined products across global markets.", responsibilities: "Manage trading book, analyse market trends, execute trades.", requirements: "5+ years commodity trading experience. Strong analytical skills.", benefits: "Competitive salary, health insurance, annual bonus.", deadline: null, status: "published", publishedAt: null },
-  { id: -2, jobId: "MTC-JOB-2026-0002", title: "Tank Farm Operations Manager", department: "Energy & Petroleum", division: "Refinery Operations", location: "Lagos, Nigeria", type: "Full-time", level: "Management", workMode: "On-site", description: "Oversee tank farm operations, HSE compliance, and logistics coordination.", responsibilities: "Manage daily operations, ensure HSE compliance, oversee maintenance.", requirements: "Engineering degree + 7 years operations experience.", benefits: "Housing allowance, transportation, medical coverage.", deadline: null, status: "published", publishedAt: null },
+  { id: -2, jobId: "MTC-JOB-2026-0002", title: "Tank Farm Operations Manager", department: "Energy & Petroleum", division: "Refinery Operations", location: "Rotterdam, Netherlands", type: "Full-time", level: "Management", workMode: "On-site", description: "Oversee tank farm operations, HSE compliance, and logistics coordination.", responsibilities: "Manage daily operations, ensure HSE compliance, oversee maintenance.", requirements: "Engineering degree + 7 years operations experience.", benefits: "Housing allowance, transportation, medical coverage.", deadline: null, status: "published", publishedAt: null },
   { id: -3, jobId: "MTC-JOB-2026-0003", title: "Corporate Finance Associate", department: "Finance", division: "Corporate Finance", location: "Washington D.C., USA", type: "Full-time", level: "Mid-level", workMode: "Hybrid", description: "Support corporate finance activities including M&A, fundraising, and financial modelling.", responsibilities: "Financial modelling, deal analysis, investor relations support.", requirements: "CFA or MBA preferred. 3+ years investment banking background.", benefits: "Performance bonus, 401k, flexible working.", deadline: null, status: "published", publishedAt: null },
 ];
 
@@ -303,7 +303,7 @@ function ApplicationModal({ job, onClose }: { job: Job; onClose: () => void }) {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="col-span-2"><label className={lbl}>Full Name {req}</label><input type="text" value={form.fullName} onChange={f("fullName")} className={inputCls("fullName")} placeholder="As it appears on your passport" />{err("fullName")}</div>
                     <div><label className={lbl}>Email Address {req}</label><input type="email" value={form.email} onChange={f("email")} className={inputCls("email")} placeholder="your@email.com" />{err("email")}</div>
-                    <div><label className={lbl}>Phone Number {req}</label><input type="tel" value={form.phone} onChange={f("phone")} className={inputCls("phone")} placeholder="+234 800 000 0000" />{err("phone")}</div>
+                    <div><label className={lbl}>Phone Number {req}</label><input type="tel" value={form.phone} onChange={f("phone")} className={inputCls("phone")} placeholder="+1 202 555 0000" />{err("phone")}</div>
                     <div><label className={lbl}>Date of Birth</label><input type="date" value={form.dateOfBirth} onChange={f("dateOfBirth")} className={inp} /></div>
                     <div><label className={lbl}>Gender</label>
                       <select value={form.gender} onChange={f("gender")} className={inp}>
@@ -311,10 +311,10 @@ function ApplicationModal({ job, onClose }: { job: Job; onClose: () => void }) {
                         <option>Male</option><option>Female</option><option>Non-binary</option><option>Prefer not to say</option>
                       </select>
                     </div>
-                    <div><label className={lbl}>Nationality {req}</label><input type="text" value={form.nationality} onChange={f("nationality")} className={inputCls("nationality")} placeholder="e.g. Nigerian" />{err("nationality")}</div>
-                    <div><label className={lbl}>Country of Residence {req}</label><input type="text" value={form.countryOfResidence} onChange={f("countryOfResidence")} className={inputCls("countryOfResidence")} placeholder="e.g. Nigeria" />{err("countryOfResidence")}</div>
-                    <div><label className={lbl}>City</label><input type="text" value={form.cityOfResidence} onChange={f("cityOfResidence")} className={inp} placeholder="e.g. Lagos" /></div>
-                    <div className="col-span-2"><label className={lbl}>Address</label><input type="text" value={form.address} onChange={f("address")} className={inp} placeholder="Street address" /></div>
+                    <div><label className={lbl}>Nationality {req}</label><input type="text" value={form.nationality} onChange={f("nationality")} className={inputCls("nationality")} placeholder="e.g. American" />{err("nationality")}</div>
+                    <div><label className={lbl}>Country of Residence {req}</label><input type="text" value={form.countryOfResidence} onChange={f("countryOfResidence")} className={inputCls("countryOfResidence")} placeholder="e.g. United States" />{err("countryOfResidence")}</div>
+                    <div><label className={lbl}>City</label><input type="text" value={form.cityOfResidence} onChange={f("cityOfResidence")} className={inp} placeholder="e.g. Washington DC" /></div>
+                    <div className="col-span-2"><label className={lbl}>Address</label><input type="text" value={form.address} onChange={f("address")} className={inp} placeholder="e.g. 1600 Pennsylvania Ave" /></div>
                   </div>
                 </div>
               )}
@@ -449,7 +449,7 @@ function ApplicationModal({ job, onClose }: { job: Job; onClose: () => void }) {
                     <YesNo value={form.willingToRelocate} onChange={(v) => setForm((p) => ({ ...p, willingToRelocate: v }))} name="relocate" />
                     {form.willingToRelocate && (
                       <div className="mt-3"><label className={lbl}>Which countries are you open to?</label>
-                        <input type="text" value={form.relocationCountries} onChange={f("relocationCountries")} className={inp} placeholder="e.g. UK, UAE, USA, Nigeria" />
+                        <input type="text" value={form.relocationCountries} onChange={f("relocationCountries")} className={inp} placeholder="e.g. USA, UK, UAE, Germany" />
                       </div>
                     )}
                   </div>
